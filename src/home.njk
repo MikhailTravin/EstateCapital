@@ -125,7 +125,7 @@
 
 					<div class="filter__fields">
 						<div class="filter__field">
-							<span class="filter__field-title">Местоположение</span>
+							<span class="filter__field-title select-field-title">Местоположение</span>
 
 							<div class="select">
 								<input type="text" name="place" class="select__field" placeholder="Выбрать">
@@ -133,6 +133,19 @@
 									<use xlink:href="images/sprite.svg#icon-select-arrow"></use>
 								</svg>
 								<div class="select__list">
+									<div class="select-top">
+										<div class="select-top__left">
+											<div class="select-top__back">
+												<svg>
+													<use xlink:href="images/sprite.svg#icon-select-arrow"></use>
+												</svg>
+											</div>
+											<span>Местоположение</span>
+										</div>
+										<button type="button" class="select-top__close">
+											<img loading="lazy" src="img/close1.svg" alt="">
+										</button>
+									</div>
 									<div class="filter__types">
 										<label class="filter__type">
 											<input type="radio" name="type" value="Все" checked>
@@ -175,13 +188,14 @@
 											<span class="select__item">м. Парк Культуры</span>
 										</div>
 									</div>
+									<button type="button" class="btn btn-primary">Показать 64 предложения</button>
 								</div>
 							</div><!-- select -->
 
 						</div><!-- filter__field -->
 
 						<div class="filter__field">
-							<span class="filter__field-title">Тип помещения</span>
+							<span class="filter__field-title select-field-title">Тип помещения</span>
 
 							<div class="select select2">
 								<input type="text" name="place" class="select__field" value="Все">
@@ -189,6 +203,19 @@
 									<use xlink:href="images/sprite.svg#icon-select-arrow"></use>
 								</svg>
 								<div class="select__list">
+									<div class="select-top">
+										<div class="select-top__left">
+											<div class="select-top__back">
+												<svg>
+													<use xlink:href="images/sprite.svg#icon-select-arrow"></use>
+												</svg>
+											</div>
+											<span>Тип помещения</span>
+										</div>
+										<button type="button" class="select-top__close">
+											<img loading="lazy" src="img/close1.svg" alt="">
+										</button>
+									</div>
 									<div data-simplebar class="select__simplebar">
 										<div class="select__items">
 											<label class="checkbox">
@@ -229,6 +256,7 @@
 											</label>
 										</div>
 									</div>
+									<button type="button" class="btn btn-primary">Показать 64 предложения</button>
 								</div>
 							</div><!-- select -->
 

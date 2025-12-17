@@ -2401,6 +2401,12 @@ a.contacts__item-desc:hover {
   display: -ms-flexbox;
   display: flex;
 }
+@media (max-width: 992px) {
+  .filter__types {
+    border-radius: 0px;
+    gap: 10px;
+  }
+}
 
 .filter__type input {
   position: absolute;
@@ -2420,6 +2426,19 @@ a.contacts__item-desc:hover {
   padding: 13px 18px;
   cursor: pointer;
   border-radius: 6px;
+}
+@media (max-width: 992px) {
+  .filter__type-btn {
+    min-height: 46px;
+    padding: 5px 18px;
+    font-size: 16px;
+    background: #f8f8f9;
+  }
+}
+@media (max-width: 768px) {
+  .filter__type-btn {
+    font-size: 14px;
+  }
 }
 
 .filter__type-btn .svg-icon {
@@ -4439,6 +4458,17 @@ a.contacts__item-desc:hover {
   font-size: 16px;
   background: #f8f8f9;
 }
+@media (max-width: 992px) {
+  .catalog-filter .filter__type-btn {
+    min-height: 46px;
+    padding: 5px 18px;
+  }
+}
+@media (max-width: 768px) {
+  .catalog-filter .filter__type-btn {
+    font-size: 14px;
+  }
+}
 .catalog-filter .filter__reset {
   padding: 0px 0px 0px 0px;
   font-size: 14px;
@@ -5301,6 +5331,7 @@ a.contacts__item-desc:hover {
 
 @media (max-width: 768px) {
   .select-field-title {
+    pointer-events: none;
     position: absolute;
     font-weight: 500;
     font-size: 16px;
@@ -5342,6 +5373,12 @@ a.contacts__item-desc:hover {
   font-weight: 600;
   font-size: 24px;
   line-height: 125%;
+}
+@media (max-width: 380px) {
+  .select-top__left {
+    font-size: 20px;
+    gap: 10px;
+  }
 }
 .select-top__back {
   display: -webkit-box;

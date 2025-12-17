@@ -1,0 +1,134 @@
+body {
+  color: var(--theme-color-text-common);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  .lock & {
+    overflow: hidden;
+  }
+  .menu-open & {
+    overflow: hidden;
+    &::before {
+      content: "";
+      cursor: pointer;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 40;
+      background-color: rgba(8, 30, 22, 0.25);
+    }
+  }
+}
+
+body.noscroll {
+  overflow: hidden;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+fieldset,
+fieldset legend {
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  outline: none;
+  color: currentcolor;
+}
+
+body {
+  &::before {
+    content: "";
+    background: rgba(0, 0, 0, 0.32);
+    position: fixed;
+    width: 100%;
+    height: calc(100% - 103px);
+    top: 103px;
+    left: 0;
+    z-index: 42;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    @media (max-width: 379px) {
+      height: calc(100% - 88px);
+      top: 88px;
+    }
+  }
+  .filter-open & {
+    overflow: hidden;
+  }
+  .sort-open & {
+    overflow: hidden;
+    &::before {
+      content: "";
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}
+
+.pagination {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  &__item {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    width: 46px;
+    height: 46px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #001b3a;
+    background-color: #fff;
+    outline: none;
+
+    &_active {
+      background-color: #001b3a;
+      color: #fff;
+    }
+
+    &_ellipsis {
+      pointer-events: none;
+    }
+
+    &_nav {
+      background-color: transparent;
+      border: 1px solid transparent;
+      transition: border 0.3s;
+      &:hover {
+        border: 1px solid #ccd1d8;
+      }
+      &-prev {
+        transform: rotate(180deg);
+      }
+      &-next {
+      }
+    }
+
+    &_disabled {
+      & svg {
+        fill: #82879a;
+      }
+    }
+  }
+}

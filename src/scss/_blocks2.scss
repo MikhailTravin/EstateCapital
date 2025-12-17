@@ -261,6 +261,12 @@
     flex-wrap: wrap;
     align-items: start;
     gap: 10px;
+    &.main-filter-result {
+        display: none;
+        @media (max-width: 992px) {
+            display: flex;
+        }
+    }
     @media (max-width: 992px) {
         order: 1;
         margin-bottom: 24px;

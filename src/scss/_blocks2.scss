@@ -2841,3 +2841,102 @@
         }
     }
 }
+
+.objects-list2 {
+    flex-direction: column;
+    margin-bottom: 0px;
+    padding: 10px;
+    .objects__item {
+        position: relative;
+        display: flex;
+        border-radius: 14px;
+        overflow: hidden;
+        min-height: 200px;
+        padding: 0px 0px 0px 0px;
+    }
+    .objects__item-favorite {
+        top: 22px;
+        right: 22px;
+        background: #f8f8f9;
+    }
+    .objects__item-header {
+        flex: 0 0 280px;
+        height: auto;
+    }
+    .objects__item-body {
+        display: flex;
+        flex: 1 1 auto;
+        gap: 16px;
+        padding: 22px 22px;
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            @media (max-width: 1350px) {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+            li {
+                flex: 0 1 154px;
+            }
+        }
+    }
+    .objects-list2__left {
+        flex: 0 1 38.5%;
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        justify-content: space-between;
+        ul {
+            @media (max-width: 1350px) {
+                grid-template-columns: 1fr;
+            }
+            li {
+                flex: 1 1 auto;
+            }
+        }
+    }
+    .objects-list2__right {
+        flex: 0 1 60%;
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .objects__item-title {
+        margin: 0px 0px 0px 0px;
+        min-height: 46px;
+        display: flex;
+        align-items: center;
+    }
+    .objects__item-param {
+        margin: 0px 0px 0px 0px;
+        min-height: 46px;
+        display: flex;
+        align-items: center;
+    }
+    .objects-list2__value {
+        font-weight: 500;
+        font-size: 16px;
+        letter-spacing: -0.01em;
+        margin: 0px 0px 6px 0px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        &.prices {
+            white-space: nowrap;
+        }
+        span {
+            opacity: 0.8;
+            font-weight: 500;
+            font-size: 12px;
+            letter-spacing: -0.01em;
+        }
+    }
+    .objects-list2__name {
+        font-weight: 500;
+        font-size: 12px;
+        opacity: 0.6;
+        line-height: 120%;
+    }
+}

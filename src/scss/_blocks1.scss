@@ -540,6 +540,10 @@ h2 {
 }
 .objects__list {
   margin-bottom: -20px;
+  display: none;
+  &.active{
+    display: flex;
+  }
 }
 .objects__list > * {
   margin-bottom: 20px;

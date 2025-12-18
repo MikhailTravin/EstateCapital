@@ -1244,3 +1244,66 @@ if (stickyBlock && targetBlock) {
 
   window.addEventListener('scroll', checkStickyActive);
 }
+
+const layoutButtons = document.querySelectorAll('.objects__control-btn[data-layout]');
+const layoutBlocks = document.querySelectorAll('.objects__list[data-layout]');
+if (layoutButtons.length) {
+  let currentLayout = '';
+
+  function switchLayout(layoutType) {
+    currentLayout = layoutType;
+
+    layoutButtons.forEach(btn => {
+      btn.classList.toggle('actived', btn.getAttribute('data-layout') === layoutType);
+    });
+
+    layoutBlocks.forEach(block => {
+      const isActive = block.getAttribute('data-layout') === layoutType;
+      block.classList.toggle('active', isActive);
+    });
+  }
+
+  function handleResize() {
+    const isMobile = window.matchMedia('(max-width: 992px)').matches;
+
+    if (isMobile) {
+      layoutButtons.forEach(btn => btn.classList.remove('actived'));
+      layoutBlocks.forEach(block => block.classList.remove('active'));
+
+      const gridBlock = document.querySelector('.objects__list[data-layout="grid"]');
+      const gridButton = document.querySelector('.objects__control-btn[data-layout="grid"]');
+
+      if (gridBlock) gridBlock.classList.add('active');
+      if (gridButton) gridButton.classList.add('actived');
+    } else {
+      if (currentLayout) {
+        switchLayout(currentLayout);
+      } else {
+        const activeBlock = document.querySelector('.objects__list.active');
+        if (activeBlock) {
+          const activeLayout = activeBlock.getAttribute('data-layout');
+          switchLayout(activeLayout);
+        }
+      }
+    }
+  }
+
+  const activeBlock = document.querySelector('.objects__list.active');
+  if (activeBlock) {
+    const activeLayout = activeBlock.getAttribute('data-layout');
+    switchLayout(activeLayout);
+  }
+
+  layoutButtons.forEach(button => {
+    button.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (!window.matchMedia('(max-width: 992px)').matches) {
+        switchLayout(this.getAttribute('data-layout'));
+      }
+    });
+  });
+
+  window.addEventListener('resize', handleResize);
+
+  handleResize();
+}

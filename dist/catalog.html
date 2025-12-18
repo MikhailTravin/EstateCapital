@@ -1061,13 +1061,13 @@
 								</svg>
 							</a>
 
-							<a href="#" class="objects__control-btn actived mobile-none">
+							<a href="#" data-layout="grid" class="objects__control-btn mobile-none actived">
 								<svg class="svg-icon icon-present-1">
 									<use xlink:href="images/sprite.svg#icon-present-1"></use>
 								</svg>
 							</a>
 
-							<a href="#" class="objects__control-btn mobile-none">
+							<a href="#" data-layout="list" class="objects__control-btn mobile-none">
 								<svg class="svg-icon icon-present-2">
 									<use xlink:href="images/sprite.svg#icon-present-2"></use>
 								</svg>
@@ -1077,7 +1077,7 @@
 
 					</div><!-- objects__control -->
 
-					<div class="objects__list row">
+					<div data-layout="grid" class="objects__list row active">
 						<div class="col-xl-4 col-md-6">
 							<div class="objects__item">
 								<div class="objects__item-header">
@@ -1769,6 +1769,67 @@
 							</div><!-- objects__item -->
 
 						</div><!-- col-xl-4 -->
+
+					</div><!-- objects__list -->
+					<div data-layout="list" class="objects__list objects-list2 row ">
+						<div class="objects__item">
+							<a href="#" class="objects__item-favorite">
+								<svg class="svg-icon icon-favorites">
+									<use xlink:href="images/sprite.svg#icon-favorites"></use>
+								</svg>
+							</a>
+							<div class="objects__item-header">
+								<a href="#" class="objects__item-photo">
+									<img class="photo-full-size" src="images/objects/list/item-1.jpg" alt="Большая Бронная, 25с3">
+								</a>
+
+
+
+							</div><!-- objects__item-header -->
+
+							<div class="objects__item-body">
+								<div class="objects-list2__left">
+									<a href="#" class="objects__item-title">Большая Бронная, 25с3</a>
+									<ul>
+										<li>
+											<div class="objects-list2__value">Пушкинская, Тверская, Чеховская</div>
+											<div class="objects-list2__name">
+												Метро
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="objects-list2__right">
+									<div class="objects__item-param">
+										<span>Арендатор: THE KAS</span>
+									</div>
+									<ul>
+										<li>
+											<div class="objects-list2__value">2</div>
+											<div class="objects-list2__name">
+												Этаж
+											</div>
+										</li>
+										<li>
+											<div class="objects-list2__value">142,5 м2</div>
+											<div class="objects-list2__name">
+												Площадь
+											</div>
+										</li>
+										<li>
+											<div class="objects-list2__value prices">315 000 000 ₽ <span>2 100 000 ₽ /
+													месяц</span>
+											</div>
+											<div class="objects-list2__name">
+												Стоимость
+											</div>
+										</li>
+									</ul>
+								</div>
+
+							</div>
+
+						</div>
 
 					</div><!-- objects__list -->
 

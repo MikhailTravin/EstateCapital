@@ -1,0 +1,86 @@
+<div class="popup popup-callback">
+    <div class="popup__form-wrap">
+        <p class="popup__title">
+            Свяжитесь с нами
+        </p>
+
+        <p class="popup__desc">
+            Мы перезвоним в течении 30 минут
+        </p>
+
+        <form action=".php" class="form">
+            <label class="form__label">
+                <span class="form__label-title">Ваше имя</span>
+                <input type="text" name="name" class="form__field" placeholder="Введите имя">
+            </label>
+
+            <label class="form__label error">
+                <span class="form__label-title">Номер телефона *</span>
+                <input type="text" name="phone" class="form__field" placeholder="+7 XXX XXX-XX-XX">
+            </label>
+
+            <label class="form__label">
+                <span class="form__label-title">Сообщение</span>
+                <textarea name="message" class="form__field form__field_text"
+                    placeholder="Введите сообщение"></textarea>
+            </label>
+
+            <button class="btn btn-secondary form__btn">
+                <span>Отправить</span>
+            </button>
+
+            <label class="checkbox">
+                <input type="checkbox">
+                <span class="checkbox__btn">
+                    <svg class="svg-icon icon-check">
+                        <use xlink:href="images/sprite.svg#icon-check"></use>
+                    </svg>
+                </span>
+
+                <span class="checkbox__desc">
+                    Я даю <a href="#">согласие</a> на обработку
+                    <a href="#">персональных данных</a>
+                </span>
+
+            </label>
+
+            <label class="checkbox error">
+                <input type="checkbox">
+                <span class="checkbox__btn">
+                    <svg class="svg-icon icon-check">
+                        <use xlink:href="images/sprite.svg#icon-check"></use>
+                    </svg>
+                </span>
+
+                <span class="checkbox__desc">
+                    Я даю <a href="#">согласие</a> на рекламно-информационные рассылки
+                </span>
+
+            </label>
+
+        </form>
+
+    </div><!-- popup__form-wrap -->
+
+    <div class="popup__thank">
+        <span class="popup__thank-icon">
+            <svg class="svg-icon icon-thank pos-center">
+                <use xlink:href="images/sprite.svg#icon-thank"></use>
+            </svg>
+        </span>
+
+        <p class="popup__title">
+            Свяжитесь с нами
+        </p>
+
+        <p class="popup__desc">
+            Мы перезвоним в течении 30 минут
+        </p>
+
+    </div><!-- popup__thank -->
+
+    <span class="btn btn-primary popup__close">
+        <span>Закрыть</span>
+    </span>
+
+</div><!-- popup -->

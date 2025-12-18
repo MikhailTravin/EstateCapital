@@ -69,7 +69,10 @@ body {
       top: 88px;
     }
   }
-  .filter-open & {
+  .filter_open & {
+    overflow: hidden;
+  }
+  .map-open & {
     overflow: hidden;
   }
   .sort-open & {
@@ -131,4 +134,108 @@ body {
       }
     }
   }
+}
+
+.sticky-button {
+  position: fixed;
+  bottom: 89px;
+  width: 100%;
+  background: #fff;
+  z-index: 100;
+  padding: 20px;
+  display: none;
+  .btn {
+    width: 100%;
+  }
+  @media (max-width: 992px) {
+    display: flex;
+  }
+}
+
+.custom-marker {
+  display: flex;
+  align-items: center;
+  border-radius: 14px;
+  padding: 10px 14px 10px 10px;
+  background-color: #fff;
+  width: 300px;
+  gap: 12px;
+  position: relative;
+  z-index: 10;
+  box-shadow:
+    0 1px 3px 0 rgba(69, 81, 95, 0.1),
+    0 6px 6px 0 rgba(69, 81, 95, 0.09),
+    0 13px 8px 0 rgba(69, 81, 95, 0.05),
+    0 23px 9px 0 rgba(69, 81, 95, 0.01),
+    0 37px 10px 0 rgba(69, 81, 95, 0);
+  @media (max-width: 768px) {
+    padding: 10px;
+    width: 280px;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    transform: translate(-50%, 0px);
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid white;
+  }
+}
+.marker-header {
+  display: flex;
+  flex: 0 0 64px;
+  border-radius: 6px;
+  height: 64px;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  @media (max-width: 768px) {
+    flex: 0 0 56px;
+    height: 56px;
+  }
+}
+.marker-icon {
+}
+.marker-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.marker-address {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 120%;
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+}
+.marker-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-weight: 500;
+  font-size: 12px;
+  opacity: 0.8;
+}
+.marker-area {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  &::before {
+    content: "";
+    background-image: url("../img/ruler.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 14px;
+    height: 14px;
+  }
+}
+.marker-tenant {
 }

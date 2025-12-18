@@ -11,6 +11,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+		<link rel="stylesheet" href="css/fancybox.min.css" />
 		<link rel="stylesheet" href="css/bootstrap-grid.css">
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/styles.css">
@@ -710,7 +711,7 @@
 
 			</header>
 
-			<section class="main">
+			<section class="main" data-filter-id="main-filter">
 				<div class="main__text container">
 					<div class="main__text-left">
 						<h1>
@@ -787,28 +788,28 @@
 						<div class="filter__main">
 							<div class="filter__types">
 								<label class="filter__type">
-									<input type="radio" name="type" checked>
+									<input type="radio" name="type1" checked>
 									<span class="filter__type-btn">
 										<span>Готовый бизнес</span>
 									</span>
 								</label>
 
 								<label class="filter__type">
-									<input type="radio" name="type">
+									<input type="radio" name="type1">
 									<span class="filter__type-btn">
 										<span>Аренда</span>
 									</span>
 								</label>
 
 								<label class="filter__type">
-									<input type="radio" name="type">
+									<input type="radio" name="type1">
 									<span class="filter__type-btn">
 										<span>Продажа</span>
 									</span>
 								</label>
 
 								<label class="filter__type">
-									<input type="radio" name="type">
+									<input type="radio" name="type1">
 									<span class="filter__type-btn">
 										<span>Премиум</span>
 										<svg class="svg-icon icon-premium">
@@ -848,28 +849,28 @@
 										</div>
 										<div class="filter__types">
 											<label class="filter__type">
-												<input type="radio" name="type" value="Все" checked>
+												<input type="radio" name="type2" value="Все" checked>
 												<span class="filter__type-btn">
 													<span>Все</span>
 												</span>
 											</label>
 
 											<label class="filter__type">
-												<input type="radio" name="type" value="Округ">
+												<input type="radio" name="type2" value="Округ">
 												<span class="filter__type-btn">
 													<span>Округ</span>
 												</span>
 											</label>
 
 											<label class="filter__type">
-												<input type="radio" name="type" value="Метро">
+												<input type="radio" name="type2" value="Метро">
 												<span class="filter__type-btn">
 													<span>Метро</span>
 												</span>
 											</label>
 
 											<label class="filter__type">
-												<input type="radio" name="type" value="Улица">
+												<input type="radio" name="type2" value="Улица">
 												<span class="filter__type-btn">
 													<span>Улица</span>
 												</span>
@@ -965,24 +966,22 @@
 							<div class="filter__field">
 								<span class="filter__field-title">Стоимость, млн ₽</span>
 
-								<div class="range">
+								<div class="range" data-slider-id="1">
 									<div class="range__field-wrap">
 										<div class="range__from">
 											<span class="range__field-title">от</span>
-											<input type="text" id="priceRangeFrom" name="priceFrom" class="range__field" value="15" min="15" max="315" maxlength="3">
-										</div><!-- range__from -->
+											<input type="text" name="priceFrom" class="range__field range__input-min" value="15" min="15" max="315" maxlength="3">
+										</div>
 
 										<i class="range__colon"></i>
 
 										<div class="range__to">
 											<span class="range__field-title">до</span>
-											<input type="text" id="priceRangeTo" name="priceTo" class="range__field" value="315" min="15" max="315" maxlength="3">
-										</div><!-- range__to -->
+											<input type="text" name="priceTo" class="range__field range__input-max" value="315" min="15" max="315" maxlength="3">
+										</div>
+									</div>
 
-									</div><!-- range__field-wrap -->
-
-									<i class="range__line" id="priceRange"></i>
-
+									<div class="range__line slider" data-min="15" data-max="315"></div>
 								</div><!-- range -->
 
 							</div><!-- filter__field -->
@@ -990,24 +989,22 @@
 							<div class="filter__field">
 								<span class="filter__field-title">Площадь, м<sup>2</sup></span>
 
-								<div class="range">
+								<div class="range" data-slider-id="2">
 									<div class="range__field-wrap">
 										<div class="range__from">
 											<span class="range__field-title">от</span>
-											<input type="text" name="sizeFrom" id="sizeRangeFrom" class="range__field" value="7" min="7" max="359" maxlength="3">
-										</div><!-- range__from -->
+											<input type="text" name="sizeFrom" class="range__field range__input-min" value="7" min="7" max="359" maxlength="3">
+										</div>
 
 										<i class="range__colon"></i>
 
 										<div class="range__to">
 											<span class="range__field-title">до</span>
-											<input type="text" name="sizeTo" id="sizeRangeTo" class="range__field" value="359" min="7" max="359" maxlength="3">
-										</div><!-- range__to -->
+											<input type="text" name="sizeTo" class="range__field range__input-max" value="359" min="7" max="359" maxlength="3">
+										</div>
+									</div>
 
-									</div><!-- range__field-wrap -->
-
-									<i class="range__line" id="sizeRange"></i>
-
+									<div class="range__line slider" data-min="7" data-max="359"></div>
 								</div><!-- range -->
 
 							</div><!-- filter__field -->
@@ -1049,7 +1046,7 @@
 					</div><!-- block-top -->
 
 					<div class="objects__control">
-						<a href="#" class="btn btn-primary mobile-block objects__filter-link btn-filter">
+						<a href="#" class="btn btn-primary mobile-block objects__filter-link btn-filter" data-open-filter="main">
 							<span>Фильтр</span>
 							<svg class="svg-icon icon-filter">
 								<use xlink:href="images/sprite.svg#icon-filter"></use>
@@ -1112,7 +1109,7 @@
 						</div><!-- sort -->
 
 						<div class="objects__control-btns">
-							<a href="#" class="objects__control-btn">
+							<a href="#" class="objects__control-btn btn-map">
 								<span>На карте</span>
 								<svg class="svg-icon icon-objects-map">
 									<use xlink:href="images/sprite.svg#icon-objects-map"></use>
@@ -2458,6 +2455,280 @@
 
 			</footer>
 
+			<section class="filter-map" data-filter-id="map-filter">
+				<div class="filter-map__top">
+					<a href="#" class="btn btn-primary mobile-block objects__filter-link btn-filter" data-open-filter="map">
+						<span>Фильтр</span>
+						<svg class="svg-icon icon-filter">
+							<use xlink:href="images/sprite.svg#icon-filter"></use>
+						</svg>
+					</a>
+					<button type="button" class="filter-map__close btn btn-primary">
+						<span>Закрыть</span>
+						<img loading="lazy" src="img/close1.svg" alt="">
+					</button>
+				</div>
+				<div class="main__bottom container">
+					<form action=".php" class="filter">
+
+						<div class="filter-top">
+							<div class="filter-top__title">Фильтр</div>
+							<button type="button" class="filter-top__close">
+								<img loading="lazy" src="img/close1.svg" alt="">
+							</button>
+						</div>
+
+						<div class="filter-result main-filter-result">
+							<button class="filter-result__reset" type="reset">Очистить все</button>
+							<div class="filter-result__body">
+								<div class="filter-result__column">
+									<span>Местоположение: СЗАО</span>
+									<button type="button" class="filter-result__close">
+										<img loading="lazy" src="img/close1.svg" alt="">
+									</button>
+								</div>
+								<div class="filter-result__column">
+									<span>Местоположение: СЗАО</span>
+									<button type="button" class="filter-result__close">
+										<img loading="lazy" src="img/close1.svg" alt="">
+									</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="filter__main">
+							<div class="filter__types">
+								<label class="filter__type">
+									<input type="radio" name="type1" checked>
+									<span class="filter__type-btn">
+										<span>Готовый бизнес</span>
+									</span>
+								</label>
+
+								<label class="filter__type">
+									<input type="radio" name="type1">
+									<span class="filter__type-btn">
+										<span>Аренда</span>
+									</span>
+								</label>
+
+								<label class="filter__type">
+									<input type="radio" name="type1">
+									<span class="filter__type-btn">
+										<span>Продажа</span>
+									</span>
+								</label>
+
+								<label class="filter__type">
+									<input type="radio" name="type1">
+									<span class="filter__type-btn">
+										<span>Премиум</span>
+										<svg class="svg-icon icon-premium">
+											<use xlink:href="images/sprite.svg#icon-premium"></use>
+										</svg>
+									</span>
+								</label>
+
+							</div><!-- filter__types -->
+
+
+
+						</div><!-- filter__main -->
+
+						<div class="filter__fields">
+							<div class="filter__field">
+								<span class="filter__field-title select-field-title">Местоположение</span>
+
+								<div class="select">
+									<input type="text" name="place" class="select__field" placeholder="Выбрать">
+									<svg class="svg-icon icon-select-arrow">
+										<use xlink:href="images/sprite.svg#icon-select-arrow"></use>
+									</svg>
+									<div class="select__list">
+										<div class="select-top">
+											<div class="select-top__left">
+												<div class="select-top__back">
+													<svg>
+														<use xlink:href="images/sprite.svg#icon-select-arrow"></use>
+													</svg>
+												</div>
+												<span>Местоположение</span>
+											</div>
+											<button type="button" class="select-top__close">
+												<img loading="lazy" src="img/close1.svg" alt="">
+											</button>
+										</div>
+										<div class="filter__types">
+											<label class="filter__type">
+												<input type="radio" name="type2" value="Все" checked>
+												<span class="filter__type-btn">
+													<span>Все</span>
+												</span>
+											</label>
+
+											<label class="filter__type">
+												<input type="radio" name="type2" value="Округ">
+												<span class="filter__type-btn">
+													<span>Округ</span>
+												</span>
+											</label>
+
+											<label class="filter__type">
+												<input type="radio" name="type2" value="Метро">
+												<span class="filter__type-btn">
+													<span>Метро</span>
+												</span>
+											</label>
+
+											<label class="filter__type">
+												<input type="radio" name="type2" value="Улица">
+												<span class="filter__type-btn">
+													<span>Улица</span>
+												</span>
+											</label>
+										</div>
+										<div data-simplebar class="select__simplebar">
+											<div class="select__items">
+												<span class="select__item">СЗАО</span>
+												<span class="select__item">ЮВАО</span>
+												<span class="select__item">ЦАО</span>
+												<span class="select__item">САО</span>
+												<span class="select__item">ВАО</span>
+												<span class="select__item">ЮАО</span>
+												<span class="select__item">Проспект Мира</span>
+												<span class="select__item">Улица Ленина</span>
+												<span class="select__item">м. Парк Культуры</span>
+											</div>
+										</div>
+										<button type="button" class="btn btn-primary">Показать 64 предложения</button>
+									</div>
+								</div><!-- select -->
+
+							</div><!-- filter__field -->
+
+							<div class="filter__field">
+								<span class="filter__field-title select-field-title">Тип помещения</span>
+
+								<div class="select select2">
+									<input type="text" name="place" class="select__field" value="Все">
+									<svg class="svg-icon icon-select-arrow">
+										<use xlink:href="images/sprite.svg#icon-select-arrow"></use>
+									</svg>
+									<div class="select__list">
+										<div class="select-top">
+											<div class="select-top__left">
+												<div class="select-top__back">
+													<svg>
+														<use xlink:href="images/sprite.svg#icon-select-arrow"></use>
+													</svg>
+												</div>
+												<span>Тип помещения</span>
+											</div>
+											<button type="button" class="select-top__close">
+												<img loading="lazy" src="img/close1.svg" alt="">
+											</button>
+										</div>
+										<div data-simplebar class="select__simplebar">
+											<div class="select__items">
+												<label class="checkbox">
+													<input type="checkbox">
+													<span class="checkbox__btn">
+														<svg class="svg-icon icon-check">
+															<use xlink:href="images/sprite.svg#icon-check"></use>
+														</svg>
+													</span>
+													<span class="checkbox__desc">
+														Торговое помещение
+													</span>
+
+												</label>
+												<label class="checkbox">
+													<input type="checkbox">
+													<span class="checkbox__btn">
+														<svg class="svg-icon icon-check">
+															<use xlink:href="images/sprite.svg#icon-check"></use>
+														</svg>
+													</span>
+													<span class="checkbox__desc">
+														Склад
+													</span>
+
+												</label>
+												<label class="checkbox">
+													<input type="checkbox">
+													<span class="checkbox__btn">
+														<svg class="svg-icon icon-check">
+															<use xlink:href="images/sprite.svg#icon-check"></use>
+														</svg>
+													</span>
+													<span class="checkbox__desc">
+														Офис
+													</span>
+
+												</label>
+											</div>
+										</div>
+										<button type="button" class="btn btn-primary">Показать 64 предложения</button>
+									</div>
+								</div><!-- select -->
+
+							</div><!-- filter__field -->
+
+							<div class="filter__field">
+								<span class="filter__field-title">Стоимость, млн ₽</span>
+
+								<div class="range" data-slider-id="1">
+									<div class="range__field-wrap">
+										<div class="range__from">
+											<span class="range__field-title">от</span>
+											<input type="text" name="priceFrom" class="range__field range__input-min" value="15" min="15" max="315" maxlength="3">
+										</div>
+
+										<i class="range__colon"></i>
+
+										<div class="range__to">
+											<span class="range__field-title">до</span>
+											<input type="text" name="priceTo" class="range__field range__input-max" value="315" min="15" max="315" maxlength="3">
+										</div>
+									</div>
+
+									<div class="range__line slider" data-min="15" data-max="315"></div>
+								</div><!-- range -->
+
+							</div><!-- filter__field -->
+
+							<div class="filter__field">
+								<span class="filter__field-title">Площадь, м<sup>2</sup></span>
+
+								<div class="range" data-slider-id="2">
+									<div class="range__field-wrap">
+										<div class="range__from">
+											<span class="range__field-title">от</span>
+											<input type="text" name="sizeFrom" class="range__field range__input-min" value="7" min="7" max="359" maxlength="3">
+										</div>
+
+										<i class="range__colon"></i>
+
+										<div class="range__to">
+											<span class="range__field-title">до</span>
+											<input type="text" name="sizeTo" class="range__field range__input-max" value="359" min="7" max="359" maxlength="3">
+										</div>
+									</div>
+
+									<div class="range__line slider" data-min="7" data-max="359"></div>
+								</div><!-- range -->
+
+							</div><!-- filter__field -->
+
+						</div><!-- filter__fields -->
+
+						<button type="button" class="filter__button btn btn-primary">Показать 64 предложения</button>
+
+					</form>
+				</div>
+				<div id="map2"></div>
+			</section>
+
 			<div class="scroll-nav mobile-block">
 				<div class="scroll-nav__list">
 					<a href="#" class="scroll-nav__link search-open-btn">
@@ -2851,9 +3122,11 @@
 
 			</div><!-- menu -->
 
+
 		</section><!-- page-wrap -->
 
 		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+		<script src="js/fancybox.umd.js"></script>
 		<script src="js/nouislider.min.js"></script>
 		<script src="js/simplebar.min.js"></script>
 		<script src="js/scripts.js"></script>

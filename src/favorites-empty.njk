@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Избранное - пусто</title>
+    {% include 'blocks/head.njk' %}
+</head>
+
+<body>
+    <section class="page-wrap">
+        {% include 'blocks/header.njk' %}
+
+        <section class="block-favorites">
+            <div class="container">
+
+                <div class="pager">
+                    <a href="#">Главная</a>
+                    <i></i>
+                    <span>Избранное</span>
+                </div>
+
+                <div class="block-top">
+                    <h1 class="title1">
+                        Список избранного пуст
+                    </h1>
+
+                    <div class="block-top__right">
+                        <div class="block-top__text">
+                            <span>Добавляйте объекты нажатием на</span>
+                            <svg class="svg-icon icon-favorites">
+                                <use xlink:href="images/sprite.svg#icon-favorites"></use>
+                            </svg>
+                        </div>
+                    </div><!-- block-top__right -->
+
+                </div><!-- block-top -->
+
+                <div class="block-favorites__content">
+                    <a href="#" class="block-favorites__added">
+                        <img src="img/plus.svg" alt="">
+                    </a>
+
+                    <div class="block-favorites__buttons">
+                        <a href="#" class="btn btn-primary">Каталог объектов</a>
+                        <a href="#" class="btn btn-light">На главную</a>
+                    </div>
+                </div>
+
+            </div><!-- container -->
+
+        </section><!-- blog -->
+
+        <div class="block-interested">
+            <div class="container">
+                <div class="block-interested__content">
+                    <div class="block-interested__top">
+                        <h2 class="title2">Вас может заинтересовать</h2>
+                        <a href="#" class="btn btn-light">Все предложения</a>
+                    </div>
+                    <div class="block-interested__slider swiper">
+                        <div class="block-interested__wrapper swiper-wrapper">
+                            <div class="block-interested__slide swiper-slide">
+                                <div class="objects__item">
+                                    <div class="objects__item-header">
+                                        <a href="#" class="objects__item-photo">
+                                            <img class="photo-full-size" src="images/objects/list/item-1.jpg"
+                                                alt="Большая Бронная, 25с3">
+                                        </a>
+
+                                    </div><!-- objects__item-header -->
+
+                                    <div class="objects__item-body">
+                                        <a href="#" class="objects__item-title">Большая Бронная, 25с3</a>
+
+                                        <div class="objects__item-params">
+                                            <div class="objects__item-param">
+                                                <svg class="svg-icon icon-metro">
+                                                    <use xlink:href="images/sprite.svg#icon-metro"></use>
+                                                </svg>
+                                                <span>Пушкинская, Тверская, Чеховская</span>
+                                            </div><!-- objects__item-param -->
+
+                                            <div class="objects__item-param">
+                                                <svg class="svg-icon icon-foot-time">
+                                                    <use xlink:href="images/sprite.svg#icon-foot-time"></use>
+                                                </svg>
+                                                <span>3 мин</span>
+                                            </div><!-- objects__item-param -->
+
+                                            <div class="objects__item-param">
+                                                <svg class="svg-icon icon-size">
+                                                    <use xlink:href="images/sprite.svg#icon-size"></use>
+                                                </svg>
+                                                <span>46,5 м2</span>
+                                            </div><!-- objects__item-param -->
+
+                                            <div class="objects__item-param">
+                                                <span>Арендатор: THE KAS</span>
+                                            </div><!-- objects__item-param -->
+
+                                        </div><!-- objects__item-params -->
+
+                                        <div class="object__item-footer">
+                                            <span class="objects__item-price">190 350 000 ₽</span>
+                                            <span class="objects__item-month">1 175 000 ₽ / месяц</span>
+                                        </div><!-- object__item-footer -->
+
+                                    </div><!-- objects__item-body -->
+
+                                </div>
+                            </div>
+                            <div class="block-interested__slide swiper-slide">
+                                <div class="objects__item">
+                                    <div class="objects__item-header">
+                                        <a href="#" class="objects__item-photo">
+                                            <img class="photo-full-size" src="images/objects/list/item-5.jpg"
+                                                alt="Новослободская, 20">
+                                        </a>
+
+                                        <i class="objects__item-premium"></i>
+
+                                    </div><!-- objects__item-header -->
+
+                                    <div class="objects__item-body">
+                                        <a href="#" class="objects__item-title">Новослободская, 20</a>
+
+                                        <div class="objects__item-params">
+                                            <div class="objects__item-param">
+                                                <svg class="svg-icon icon-metro">
+                                                    <use xlink:href="images/sprite.svg#icon-metro"></use>
+                                                </svg>
+                                                <span>Пушкинская, Тверская, Чеховская</span>
+                                            </div><!-- objects__item-param -->
+
+                                            <div class="objects__item-param">
+                                                <svg class="svg-icon icon-foot-time">
+                                                    <use xlink:href="images/sprite.svg#icon-foot-time"></use>
+                                                </svg>
+                                                <span>3 мин</span>
+                                            </div><!-- objects__item-param -->
+
+                                            <div class="objects__item-param">
+                                                <svg class="svg-icon icon-size">
+                                                    <use xlink:href="images/sprite.svg#icon-size"></use>
+                                                </svg>
+                                                <span>46,5 м2</span>
+                                            </div><!-- objects__item-param -->
+
+                                            <div class="objects__item-param">
+                                                <span>Арендатор: THE KAS</span>
+                                            </div><!-- objects__item-param -->
+
+                                        </div><!-- objects__item-params -->
+
+                                        <div class="object__item-footer">
+                                            <span class="objects__item-price">67 680 000 ₽</span>
+                                            <span class="objects__item-month">470 000 ₽ / месяц</span>
+                                        </div><!-- object__item-footer -->
+
+                                    </div><!-- objects__item-body -->
+
+                                </div><!-- objects__item -->
+                            </div>
+                            <div class="block-interested__slide swiper-slide">
+                                <div class="objects__item">
+                                    <div class="objects__item-header">
+                                        <a href="#" class="objects__item-photo">
+                                            <img class="photo-full-size" src="images/objects/list/item-6.jpg"
+                                                alt="Большая Садовая, 6с2">
+                                        </a>
+
+                                    </div><!-- objects__item-header -->
+
+                                    <div class="objects__item-body">
+                                        <a href="#" class="objects__item-title">Большая Садовая, 6с2</a>
+
+                                        <div class="objects__item-params">
+                                            <div class="objects__item-param">
+                                                <svg class="svg-icon icon-metro">
+                                                    <use xlink:href="images/sprite.svg#icon-metro"></use>
+                                                </svg>
+                                                <span>Пушкинская, Тверская, Чеховская</span>
+                                            </div><!-- objects__item-param -->
+
+                                            <div class="objects__item-param">
+                                                <svg class="svg-icon icon-foot-time">
+                                                    <use xlink:href="images/sprite.svg#icon-foot-time"></use>
+                                                </svg>
+                                                <span>3 мин</span>
+                                            </div><!-- objects__item-param -->
+
+                                            <div class="objects__item-param">
+                                                <svg class="svg-icon icon-size">
+                                                    <use xlink:href="images/sprite.svg#icon-size"></use>
+                                                </svg>
+                                                <span>46,5 м2</span>
+                                            </div><!-- objects__item-param -->
+
+                                            <div class="objects__item-param">
+                                                <span>Арендатор: THE KAS</span>
+                                            </div><!-- objects__item-param -->
+
+                                        </div><!-- objects__item-params -->
+
+                                        <div class="object__item-footer">
+                                            <span class="objects__item-price">По запросу</span>
+                                            <span class="objects__item-month">580 000 ₽ / месяц</span>
+                                        </div><!-- object__item-footer -->
+
+                                    </div><!-- objects__item-body -->
+
+                                </div><!-- objects__item -->
+                            </div>
+                            <div class="block-interested__slide swiper-slide">
+                                <div class="objects__item">
+                                    <div class="objects__item-header">
+                                        <a href="#" class="objects__item-photo">
+                                            <img class="photo-full-size" src="images/objects/list/item-1.jpg"
+                                                alt="Большая Бронная, 25с3">
+                                        </a>
+
+                                    </div><!-- objects__item-header -->
+
+                                    <div class="objects__item-body">
+                                        <a href="#" class="objects__item-title">Большая Бронная, 25с3</a>
+
+                                        <div class="objects__item-params">
+                                            <div class="objects__item-param">
+                                                <svg class="svg-icon icon-metro">
+                                                    <use xlink:href="images/sprite.svg#icon-metro"></use>
+                                                </svg>
+                                                <span>Пушкинская, Тверская, Чеховская</span>
+                                            </div><!-- objects__item-param -->
+
+                                            <div class="objects__item-param">
+                                                <svg class="svg-icon icon-foot-time">
+                                                    <use xlink:href="images/sprite.svg#icon-foot-time"></use>
+                                                </svg>
+                                                <span>3 мин</span>
+                                            </div><!-- objects__item-param -->
+
+                                            <div class="objects__item-param">
+                                                <svg class="svg-icon icon-size">
+                                                    <use xlink:href="images/sprite.svg#icon-size"></use>
+                                                </svg>
+                                                <span>46,5 м2</span>
+                                            </div><!-- objects__item-param -->
+
+                                            <div class="objects__item-param">
+                                                <span>Арендатор: THE KAS</span>
+                                            </div><!-- objects__item-param -->
+
+                                        </div><!-- objects__item-params -->
+
+                                        <div class="object__item-footer">
+                                            <span class="objects__item-price">190 350 000 ₽</span>
+                                            <span class="objects__item-month">1 175 000 ₽ / месяц</span>
+                                        </div><!-- object__item-footer -->
+
+                                    </div><!-- objects__item-body -->
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-light btn-mob">Все предложения</a>
+                </div>
+            </div>
+        </div>
+
+        {% include 'blocks/footer.njk' %}
+
+        {% include 'blocks/mobile-menu.njk' %}
+
+        {% include 'blocks/popups.njk' %}
+
+        {% include 'blocks/search.njk' %}
+
+        {% include 'blocks/menu.njk' %}
+
+    </section><!-- page-wrap -->
+
+    {% include 'blocks/scripts.njk' %}
+
+</body>
+
+</html>

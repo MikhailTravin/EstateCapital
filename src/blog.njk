@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Блог</title>
+    {% include 'blocks/head.njk' %}
+</head>
+
+<body>
+    <section class="page-wrap">
+        {% include 'blocks/header.njk' %}
+
+        <section class="blog blog2">
+            <div class="container">
+
+                <div class="pager">
+                    <a href="#">Главная</a>
+                    <i></i>
+                    <a href="#">О компании</a>
+                    <i></i>
+                    <span>Блог</span>
+                </div>
+
+                <div class="block-top">
+                    <h1 class="title1">
+                        Блог
+                    </h1>
+
+                    <div class="block-top__right">
+                        <a href="#" class="btn btn-light">
+                            <span>Читайте в Telegram</span>
+                            <svg class="svg-icon icon-telegram">
+                                <use xlink:href="images/sprite.svg#icon-telegram"></use>
+                            </svg>
+                        </a>
+
+                    </div><!-- block-top__right -->
+
+                </div><!-- block-top -->
+
+                <div class="blog__slider">
+                    <div class="blog__wrapper">
+                        <div class="blog__slide">
+                            <div class="blog__item">
+                                <div class="blog__item-photo">
+                                    <img class="photo-full-size" src="images/blog/item-1.jpg" alt="Фото">
+                                </div>
+
+                                <div class="blog__item-body">
+                                    <div class="blog__item-title">
+                                        Renaissance Development закрыла сделку
+                                        продажи Neva Towers
+                                    </div>
+
+                                    <span class="blog__item-date">29 июля 2025 г.</span>
+
+                                </div><!-- blog__item-body -->
+
+                            </div><!-- blog__item -->
+                            <div class="blog-front">
+                                <div class="blog-front__badge">23 объекта</div>
+                                <div class="blog-front__titles">
+                                    <div class="blog-front__title">Готовый арендный бизнес</div>
+                                    <p>
+                                        Вариант помещения с бизнес-планом и продуманной инвестиционной стратегией под
+                                        ваши нужды. Поможем с выбором места и открытием.
+                                    </p>
+                                </div>
+                                <div class="blog-front__button">
+                                    <a href="#" class="btn btn-light">
+                                        <span>Перейти</span>
+                                        <img src="img/arrow1.svg" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="blog__slide">
+                            <div class="blog__item">
+                                <a href="#" class="blog__item-photo">
+                                    <img class="photo-full-size" src="images/blog/item-2.jpg" alt="Фото">
+                                </a>
+
+                                <div class="blog__item-body">
+                                    <a href="#" class="blog__item-title">
+                                        Проект ресторатора Александра Оганезова
+                                        продолжает захватывать Москву
+                                    </a>
+
+                                    <span class="blog__item-date">1 июля 2025 г.</span>
+
+                                </div><!-- blog__item-body -->
+
+                            </div><!-- blog__item -->
+                            <div class="blog-front">
+                                <div class="blog-front__badge">23 объекта</div>
+                                <div class="blog-front__titles">
+                                    <div class="blog-front__title">Готовый арендный бизнес</div>
+                                    <p>
+                                        Вариант помещения с бизнес-планом и продуманной инвестиционной стратегией под
+                                        ваши нужды. Поможем с выбором места и открытием.
+                                    </p>
+                                </div>
+                                <div class="blog-front__button">
+                                    <a href="#" class="btn btn-light">
+                                        <span>Перейти</span>
+                                        <img src="img/arrow1.svg" alt="">
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="blog__slide">
+                            <div class="blog__item">
+                                <a href="#" class="blog__item-photo">
+                                    <img class="photo-full-size" src="images/blog/item-3.jpg" alt="Фото">
+                                </a>
+
+                                <div class="blog__item-body">
+                                    <a href="#" class="blog__item-title">
+                                        Бизнес-центр из черного кирпича возведут на
+                                        2-ой Звенигородской улице в Москве
+                                    </a>
+
+                                    <span class="blog__item-date">20 июня 2025 г.</span>
+
+                                </div><!-- blog__item-body -->
+
+                            </div><!-- blog__item -->
+                            <div class="blog-front">
+                                <div class="blog-front__badge">23 объекта</div>
+                                <div class="blog-front__titles">
+                                    <div class="blog-front__title">Готовый арендный бизнес</div>
+                                    <p>
+                                        Вариант помещения с бизнес-планом и продуманной инвестиционной стратегией под
+                                        ваши нужды. Поможем с выбором места и открытием.
+                                    </p>
+                                </div>
+                                <div class="blog-front__button">
+                                    <a href="#" class="btn btn-light">
+                                        <span>Перейти</span>
+                                        <img src="img/arrow1.svg" alt="">
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="blog__slide">
+                            <div class="blog__item">
+                                <a href="#" class="blog__item-photo">
+                                    <img class="photo-full-size" src="images/blog/item-4.jpg" alt="Фото">
+                                </a>
+
+                                <div class="blog__item-body">
+                                    <a href="#" class="blog__item-title">
+                                        Нечеловечески вкусный кофе
+                                    </a>
+
+                                    <span class="blog__item-date">19 июня 2025 г.</span>
+
+                                </div><!-- blog__item-body -->
+
+                            </div><!-- blog__item -->
+                            <div class="blog-front">
+                                <div class="blog-front__badge">23 объекта</div>
+                                <div class="blog-front__titles">
+                                    <div class="blog-front__title">Готовый арендный бизнес</div>
+                                    <p>
+                                        Вариант помещения с бизнес-планом и продуманной инвестиционной стратегией под
+                                        ваши нужды. Поможем с выбором места и открытием.
+                                    </p>
+                                </div>
+                                <div class="blog-front__button">
+                                    <a href="#" class="btn btn-light">
+                                        <span>Перейти</span>
+                                        <img src="img/arrow1.svg" alt="">
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="blog__slide">
+                            <div class="blog__item">
+                                <a href="#" class="blog__item-photo">
+                                    <img class="photo-full-size" src="images/blog/item-4.jpg" alt="Фото">
+                                </a>
+
+                                <div class="blog__item-body">
+                                    <a href="#" class="blog__item-title">
+                                        Нечеловечески вкусный кофе
+                                    </a>
+
+                                    <span class="blog__item-date">19 июня 2025 г.</span>
+
+                                </div><!-- blog__item-body -->
+
+                            </div><!-- blog__item -->
+                            <div class="blog-front">
+                                <div class="blog-front__badge">23 объекта</div>
+                                <div class="blog-front__titles">
+                                    <div class="blog-front__title">Готовый арендный бизнес</div>
+                                    <p>
+                                        Вариант помещения с бизнес-планом и продуманной инвестиционной стратегией под
+                                        ваши нужды. Поможем с выбором места и открытием.
+                                    </p>
+                                </div>
+                                <div class="blog-front__button">
+                                    <a href="#" class="btn btn-light">
+                                        <span>Перейти</span>
+                                        <img src="img/arrow1.svg" alt="">
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="blog__slide">
+                            <div class="blog__item">
+                                <a href="#" class="blog__item-photo">
+                                    <img class="photo-full-size" src="images/blog/item-3.jpg" alt="Фото">
+                                </a>
+
+                                <div class="blog__item-body">
+                                    <a href="#" class="blog__item-title">
+                                        Бизнес-центр из черного кирпича возведут на
+                                        2-ой Звенигородской улице в Москве
+                                    </a>
+
+                                    <span class="blog__item-date">20 июня 2025 г.</span>
+
+                                </div><!-- blog__item-body -->
+
+                            </div><!-- blog__item -->
+                            <div class="blog-front">
+                                <div class="blog-front__badge">23 объекта</div>
+                                <div class="blog-front__titles">
+                                    <div class="blog-front__title">Готовый арендный бизнес</div>
+                                    <p>
+                                        Вариант помещения с бизнес-планом и продуманной инвестиционной стратегией под
+                                        ваши нужды. Поможем с выбором места и открытием.
+                                    </p>
+                                </div>
+                                <div class="blog-front__button">
+                                    <a href="#" class="btn btn-light">
+                                        <span>Перейти</span>
+                                        <img src="img/arrow1.svg" alt="">
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="blog__slide">
+                            <div class="blog__item">
+                                <a href="#" class="blog__item-photo">
+                                    <img class="photo-full-size" src="images/blog/item-2.jpg" alt="Фото">
+                                </a>
+
+                                <div class="blog__item-body">
+                                    <a href="#" class="blog__item-title">
+                                        Проект ресторатора Александра Оганезова
+                                        продолжает захватывать Москву
+                                    </a>
+
+                                    <span class="blog__item-date">1 июля 2025 г.</span>
+
+                                </div><!-- blog__item-body -->
+
+                            </div><!-- blog__item -->
+                            <div class="blog-front">
+                                <div class="blog-front__badge">23 объекта</div>
+                                <div class="blog-front__titles">
+                                    <div class="blog-front__title">Готовый арендный бизнес</div>
+                                    <p>
+                                        Вариант помещения с бизнес-планом и продуманной инвестиционной стратегией под
+                                        ваши нужды. Поможем с выбором места и открытием.
+                                    </p>
+                                </div>
+                                <div class="blog-front__button">
+                                    <a href="#" class="btn btn-light">
+                                        <span>Перейти</span>
+                                        <img src="img/arrow1.svg" alt="">
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="blog__slide">
+                            <div class="blog__item">
+                                <div class="blog__item-photo">
+                                    <img class="photo-full-size" src="images/blog/item-1.jpg" alt="Фото">
+                                </div>
+
+                                <div class="blog__item-body">
+                                    <div class="blog__item-title">
+                                        Renaissance Development закрыла сделку
+                                        продажи Neva Towers
+                                    </div>
+
+                                    <span class="blog__item-date">29 июля 2025 г.</span>
+
+                                </div><!-- blog__item-body -->
+
+                            </div><!-- blog__item -->
+                            <div class="blog-front">
+                                <div class="blog-front__badge">23 объекта</div>
+                                <div class="blog-front__titles">
+                                    <div class="blog-front__title">Готовый арендный бизнес</div>
+                                    <p>
+                                        Вариант помещения с бизнес-планом и продуманной инвестиционной стратегией под
+                                        ваши нужды. Поможем с выбором места и открытием.
+                                    </p>
+                                </div>
+                                <div class="blog-front__button">
+                                    <a href="#" class="btn btn-light">
+                                        <span>Перейти</span>
+                                        <img src="img/arrow1.svg" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div><!-- blog__slider -->
+
+                <div class="objects__bottom objects__bottom2">
+                    <div class="objects-none">
+                        <div class="step1">
+                            <span></span>
+                        </div>
+                        <div class="step2">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="step3">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div><!-- objects__bottom -->
+
+                <div class="objects-text">
+                    Это все предложения на данный момент
+                </div>
+
+            </div><!-- container -->
+
+        </section><!-- blog -->
+
+        <section class="subscribe container">
+            <form action=".php" class="subscribe__form subscribe__form_black">
+                <div class="row">
+                    <div class="subscribe__left col-lg-6">
+                        <p class="subscribe__title">Подпишитесь на наши обновления</p>
+                        <p class="subscribe__desc">Только важная информация, без спама</p>
+                    </div><!-- subscribe__left -->
+
+                    <div class="subscribe__right col-lg-6">
+                        <div class="subscribe__fileds">
+                            <input type="text" name="name" class="subscribe__field" placeholder="Ваше имя">
+                            <input type="text" name="name" class="subscribe__field" placeholder="Ваш email">
+                            <button class="btn btn-light subscribe__btn">
+                                <span>Отправить</span>
+                                <svg class="svg-icon icon-subscribe-arrow">
+                                    <use xlink:href="images/sprite.svg#icon-subscribe-arrow"></use>
+                                </svg>
+                            </button>
+
+                        </div><!-- subscribe__fileds -->
+
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox__btn">
+                                <svg class="svg-icon icon-check">
+                                    <use xlink:href="images/sprite.svg#icon-check"></use>
+                                </svg>
+                            </span>
+
+                            <span class="checkbox__desc">
+                                Я даю <a href="#">согласие</a> на обработку
+                                <a href="#">персональных данных</a>
+                            </span>
+
+                        </label>
+
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox__btn">
+                                <svg class="svg-icon icon-check">
+                                    <use xlink:href="images/sprite.svg#icon-check"></use>
+                                </svg>
+                            </span>
+
+                            <span class="checkbox__desc">
+                                Я даю <a href="#">согласие</a> на рекламно-информационные рассылки
+                            </span>
+
+                        </label>
+
+                    </div><!-- subscribe__right -->
+
+                </div><!-- row -->
+
+            </form>
+
+        </section><!-- subscribe -->
+
+        <section class="contacts container">
+            <div class="contacts__wrap">
+                <div id="map"></div>
+
+                <a href="#" class="btn btn-primary map-link">
+                    <span>Открыть на Яндекс Картах</span>
+                    <svg class="svg-icon icon-ya-map">
+                        <use xlink:href="images/sprite.svg#icon-ya-map"></use>
+                    </svg>
+                </a>
+
+            </div><!-- contacts__wrap -->
+
+            <div class="contacts__list">
+                <div class="contacts__item">
+                    <span class="contacts__item-icon">
+                        <svg class="svg-icon icon-contact-address pos-center">
+                            <use xlink:href="images/sprite.svg#icon-contact-address"></use>
+                        </svg>
+                    </span>
+
+                    <span class="contacts__item-desc">
+                        123022 Звенигородское ш. 18/20, стр. 1
+                    </span>
+
+                    <a href="#" class="contacts__item-blank" target="_blank">
+                        <svg class="svg-icon icon-blank-link">
+                            <use xlink:href="images/sprite.svg#icon-blank-link"></use>
+                        </svg>
+                    </a>
+
+                </div><!-- contacts__item -->
+
+                <div class="contacts__item">
+                    <span class="contacts__item-icon">
+                        <svg class="svg-icon icon-contact-phone pos-center">
+                            <use xlink:href="images/sprite.svg#icon-contact-phone"></use>
+                        </svg>
+                    </span>
+
+                    <a href="tel:+74952562908" class="contacts__item-desc">
+                        +7 495 256-29-08
+                    </a>
+
+                </div><!-- contacts__item -->
+
+                <div class="contacts__item">
+                    <span class="contacts__item-icon">
+                        <svg class="svg-icon icon-contact-mail pos-center">
+                            <use xlink:href="images/sprite.svg#icon-contact-mail"></use>
+                        </svg>
+                    </span>
+
+                    <a href="mailto:info@ec.ru" class="contacts__item-desc">
+                        info@ec.ru
+                    </a>
+
+                </div><!-- contacts__item -->
+
+            </div><!-- contacts__list -->
+
+        </section><!-- contacts -->
+
+        {% include 'blocks/footer.njk' %}
+
+        {% include 'blocks/mobile-menu.njk' %}
+
+        {% include 'blocks/popups.njk' %}
+
+        {% include 'blocks/search.njk' %}
+
+        {% include 'blocks/menu.njk' %}
+
+    </section><!-- page-wrap -->
+
+    {% include 'blocks/scripts.njk' %}
+
+</body>
+
+</html>

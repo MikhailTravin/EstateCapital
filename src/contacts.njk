@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Контакты</title>
+    {% include 'blocks/head.njk' %}
+</head>
+
+<body>
+    <section class="page-wrap">
+        {% include 'blocks/header.njk' %}
+
+        <div class="block-contacts">
+            <div class="container">
+
+                <div class="pager">
+                    <a href="#">Главная</a>
+                    <i></i>
+                    <span>Контакты</span>
+                </div>
+
+                <div class="block-top">
+                    <h1 class="title1">
+                        Контакты
+                    </h1>
+
+                </div><!-- block-top -->
+
+            </div>
+
+            <div class="contacts container">
+                <div class="contacts__wrap">
+                    <div id="map"></div>
+
+                    <a href="#" class="btn btn-primary map-link">
+                        <span>Открыть на Яндекс Картах</span>
+                        <svg class="svg-icon icon-ya-map">
+                            <use xlink:href="images/sprite.svg#icon-ya-map"></use>
+                        </svg>
+                    </a>
+
+                </div><!-- contacts__wrap -->
+
+                <div class="contacts__list">
+                    <div class="contacts__item">
+                        <span class="contacts__item-icon">
+                            <svg class="svg-icon icon-contact-address pos-center">
+                                <use xlink:href="images/sprite.svg#icon-contact-address"></use>
+                            </svg>
+                        </span>
+
+                        <span class="contacts__item-desc">
+                            123022 Звенигородское ш. 18/20, стр. 1
+                        </span>
+
+                        <a href="#" class="contacts__item-blank" target="_blank">
+                            <svg class="svg-icon icon-blank-link">
+                                <use xlink:href="images/sprite.svg#icon-blank-link"></use>
+                            </svg>
+                        </a>
+
+                    </div><!-- contacts__item -->
+
+                    <div class="contacts__item">
+                        <span class="contacts__item-icon">
+                            <svg class="svg-icon icon-contact-phone pos-center">
+                                <use xlink:href="images/sprite.svg#icon-contact-phone"></use>
+                            </svg>
+                        </span>
+
+                        <a href="tel:+74952562908" class="contacts__item-desc">
+                            +7 495 256-29-08
+                        </a>
+
+                    </div><!-- contacts__item -->
+
+                    <div class="contacts__item">
+                        <span class="contacts__item-icon">
+                            <svg class="svg-icon icon-contact-mail pos-center">
+                                <use xlink:href="images/sprite.svg#icon-contact-mail"></use>
+                            </svg>
+                        </span>
+
+                        <a href="mailto:info@ec.ru" class="contacts__item-desc">
+                            info@ec.ru
+                        </a>
+
+                    </div><!-- contacts__item -->
+
+                </div><!-- contacts__list -->
+
+            </div><!-- contacts -->
+
+        </div>
+
+        <section class="app container app-dark">
+            <div class="app__wrap">
+                <div class="app__text">
+                    <p class="app__title">
+                        Запись на встречу
+                    </p>
+
+                    <p class="app__desc">
+                        Заполните форму для проведения встречи в удобном формате
+                    </p>
+
+                </div><!-- app__text -->
+
+                <a href="#" class="btn btn-light js-popup-link" data-href=".popup-make-appointment">Записаться</a>
+
+            </div><!-- app__wrap -->
+
+        </section><!-- app -->
+
+        <div class="block-call">
+            <div class="container">
+                <div class="block-call__content">
+                    <a href="tel:74952562908" class="block-call__tel">+7 495 256-29-08</a>
+                    <a href="#" class="btn btn-light">Перезвоните мне</a>
+                </div>
+            </div>
+        </div>
+
+        {% include 'blocks/footer.njk' %}
+
+        <div class="popup popup-make-appointment">
+            <div class="popup__form-wrap">
+                <p class="popup__title">
+                    Запись на встречу
+                </p>
+
+                <p class="popup__desc">
+                    Мы перезвоним и подберем лучшие условия
+                </p>
+
+                <form action=".php" class="form">
+                    <label class="form__label">
+                        <span class="form__label-title">Ваше имя</span>
+                        <input type="text" name="name" class="form__field" placeholder="Введите имя">
+                    </label>
+
+                    <label class="form__label error">
+                        <span class="form__label-title">Номер телефона *</span>
+                        <input type="text" name="phone" class="form__field" placeholder="+7 XXX XXX-XX-XX">
+                    </label>
+
+                    <label class="form__label">
+                        <span class="form__label-title">Сообщение</span>
+                        <textarea name="message" class="form__field form__field_text"
+                            placeholder="Введите сообщение"></textarea>
+                    </label>
+
+                    <label class="form__label">
+                        <span class="form__label-title">Удобные способы связи</span>
+                        <div class="form__checkboxes">
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span class="checkbox__btn">
+                                    <svg class="svg-icon icon-check">
+                                        <use xlink:href="images/sprite.svg#icon-check"></use>
+                                    </svg>
+                                </span>
+
+                                <span class="checkbox__desc">
+                                    Звонок
+                                </span>
+
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span class="checkbox__btn">
+                                    <svg class="svg-icon icon-check">
+                                        <use xlink:href="images/sprite.svg#icon-check"></use>
+                                    </svg>
+                                </span>
+
+                                <span class="checkbox__desc">
+                                    WhatsApp
+                                </span>
+
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span class="checkbox__btn">
+                                    <svg class="svg-icon icon-check">
+                                        <use xlink:href="images/sprite.svg#icon-check"></use>
+                                    </svg>
+                                </span>
+
+                                <span class="checkbox__desc">
+                                    Telegram
+                                </span>
+
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span class="checkbox__btn">
+                                    <svg class="svg-icon icon-check">
+                                        <use xlink:href="images/sprite.svg#icon-check"></use>
+                                    </svg>
+                                </span>
+
+                                <span class="checkbox__desc">
+                                    MAX
+                                </span>
+
+                            </label>
+                        </div>
+                    </label>
+
+                    <button class="btn btn-secondary form__btn">
+                        <span>Отправить</span>
+                    </button>
+
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox__btn">
+                            <svg class="svg-icon icon-check">
+                                <use xlink:href="images/sprite.svg#icon-check"></use>
+                            </svg>
+                        </span>
+
+                        <span class="checkbox__desc">
+                            Я даю <a href="#">согласие</a> на обработку
+                            <a href="#">персональных данных</a>
+                        </span>
+
+                    </label>
+
+                    <label class="checkbox error">
+                        <input type="checkbox">
+                        <span class="checkbox__btn">
+                            <svg class="svg-icon icon-check">
+                                <use xlink:href="images/sprite.svg#icon-check"></use>
+                            </svg>
+                        </span>
+
+                        <span class="checkbox__desc">
+                            Я даю <a href="#">согласие</a> на рекламно-информационные рассылки
+                        </span>
+
+                    </label>
+
+                </form>
+
+            </div><!-- popup__form-wrap -->
+
+            <div class="popup__thank">
+                <span class="popup__thank-icon">
+                    <svg class="svg-icon icon-thank pos-center">
+                        <use xlink:href="images/sprite.svg#icon-thank"></use>
+                    </svg>
+                </span>
+
+                <p class="popup__title">
+                    Свяжитесь с нами
+                </p>
+
+                <p class="popup__desc">
+                    Мы перезвоним в течении 30 минут
+                </p>
+
+            </div><!-- popup__thank -->
+
+            <span class="btn btn-primary popup__close">
+                <span>Закрыть</span>
+            </span>
+
+        </div><!-- popup -->
+
+        {% include 'blocks/mobile-menu.njk' %}
+
+        {% include 'blocks/popups.njk' %}
+
+        {% include 'blocks/search.njk' %}
+
+        {% include 'blocks/menu.njk' %}
+
+    </section><!-- page-wrap -->
+
+    {% include 'blocks/scripts.njk' %}
+
+</body>
+
+</html>

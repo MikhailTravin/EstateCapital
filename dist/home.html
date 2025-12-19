@@ -1046,7 +1046,7 @@
 					</div><!-- block-top -->
 
 					<div class="objects__control">
-						<a href="#" class="btn btn-primary mobile-block objects__filter-link btn-filter" data-open-filter="main">
+						<a href="#" class="btn btn-primary mobile-block objects__filter-link btn-filter" data-open-filter="catalog">
 							<span>Фильтр</span>
 							<svg class="svg-icon icon-filter">
 								<use xlink:href="images/sprite.svg#icon-filter"></use>
@@ -1060,8 +1060,6 @@
 								</svg>
 								<span>Сортировать</span>
 							</span>
-
-							<span class="sort__result">64 предложения</span>
 
 							<div class="sort__body">
 								<div class="sort__top">
@@ -1116,13 +1114,13 @@
 								</svg>
 							</a>
 
-							<a href="#" class="objects__control-btn actived mobile-none">
+							<a href="#" data-layout="grid" class="objects__control-btn mobile-none actived">
 								<svg class="svg-icon icon-present-1">
 									<use xlink:href="images/sprite.svg#icon-present-1"></use>
 								</svg>
 							</a>
 
-							<a href="#" class="objects__control-btn mobile-none">
+							<a href="#" data-layout="list" class="objects__control-btn mobile-none">
 								<svg class="svg-icon icon-present-2">
 									<use xlink:href="images/sprite.svg#icon-present-2"></use>
 								</svg>
@@ -1132,7 +1130,7 @@
 
 					</div><!-- objects__control -->
 
-					<div class="objects__list row">
+					<div data-layout="grid" class="objects__list row active">
 						<div class="col-xl-4 col-md-6">
 							<div class="objects__item">
 								<div class="objects__item-header">
@@ -1826,6 +1824,67 @@
 						</div><!-- col-xl-4 -->
 
 					</div><!-- objects__list -->
+					<div data-layout="list" class="objects__list objects-list2 row ">
+						<div class="objects__item">
+							<a href="#" class="objects__item-favorite">
+								<svg class="svg-icon icon-favorites">
+									<use xlink:href="images/sprite.svg#icon-favorites"></use>
+								</svg>
+							</a>
+							<div class="objects__item-header">
+								<a href="#" class="objects__item-photo">
+									<img class="photo-full-size" src="images/objects/list/item-1.jpg" alt="Большая Бронная, 25с3">
+								</a>
+
+
+
+							</div><!-- objects__item-header -->
+
+							<div class="objects__item-body">
+								<div class="objects-list2__left">
+									<a href="#" class="objects__item-title">Большая Бронная, 25с3</a>
+									<ul>
+										<li>
+											<div class="objects-list2__value">Пушкинская, Тверская, Чеховская</div>
+											<div class="objects-list2__name">
+												Метро
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="objects-list2__right">
+									<div class="objects__item-param">
+										<span>Арендатор: THE KAS</span>
+									</div>
+									<ul>
+										<li>
+											<div class="objects-list2__value">2</div>
+											<div class="objects-list2__name">
+												Этаж
+											</div>
+										</li>
+										<li>
+											<div class="objects-list2__value">142,5 м2</div>
+											<div class="objects-list2__name">
+												Площадь
+											</div>
+										</li>
+										<li>
+											<div class="objects-list2__value prices">315 000 000 ₽ <span>2 100 000 ₽ /
+													месяц</span>
+											</div>
+											<div class="objects-list2__name">
+												Стоимость
+											</div>
+										</li>
+									</ul>
+								</div>
+
+							</div>
+
+						</div>
+
+					</div><!-- objects__list -->
 
 					<div class="objects__bottom">
 						<a href="#" class="btn btn-primary">
@@ -1996,7 +2055,7 @@
 							Блог
 						</h2>
 
-						<div class="block-top__right">
+						<div class="block-top__right desc">
 							<a href="#" class="btn btn-light">
 								<span>Читайте в Telegram</span>
 								<svg class="svg-icon icon-telegram">
@@ -2011,30 +2070,44 @@
 						</div><!-- block-top__right -->
 
 					</div><!-- block-top -->
-
-					<div class="blog__slider">
-						<div class="blog__list row">
-							<div class="col-lg-3 blog__slide">
+					<div class="blog__slider swiper">
+						<div class="blog__wrapper swiper-wrapper">
+							<div class="blog__slide swiper-slide">
 								<div class="blog__item">
-									<a href="#" class="blog__item-photo">
+									<div class="blog__item-photo">
 										<img class="photo-full-size" src="images/blog/item-1.jpg" alt="Фото">
-									</a>
+									</div>
 
 									<div class="blog__item-body">
-										<a href="#" class="blog__item-title">
+										<div class="blog__item-title">
 											Renaissance Development закрыла сделку
 											продажи Neva Towers
-										</a>
+										</div>
 
 										<span class="blog__item-date">29 июля 2025 г.</span>
 
 									</div><!-- blog__item-body -->
 
 								</div><!-- blog__item -->
+								<div class="blog-front">
+									<div class="blog-front__badge">23 объекта</div>
+									<div class="blog-front__titles">
+										<div class="blog-front__title">Готовый арендный бизнес</div>
+										<p>
+											Вариант помещения с бизнес-планом и продуманной инвестиционной стратегией под
+											ваши нужды. Поможем с выбором места и открытием.
+										</p>
+									</div>
+									<div class="blog-front__button">
+										<a href="#" class="btn btn-light">
+											<span>Перейти</span>
+											<img src="img/arrow1.svg" alt="">
+										</a>
+									</div>
+								</div>
+							</div>
 
-							</div><!-- col-3 -->
-
-							<div class="col-lg-3 blog__slide">
+							<div class="blog__slide swiper-slide">
 								<div class="blog__item">
 									<a href="#" class="blog__item-photo">
 										<img class="photo-full-size" src="images/blog/item-2.jpg" alt="Фото">
@@ -2051,10 +2124,26 @@
 									</div><!-- blog__item-body -->
 
 								</div><!-- blog__item -->
+								<div class="blog-front">
+									<div class="blog-front__badge">23 объекта</div>
+									<div class="blog-front__titles">
+										<div class="blog-front__title">Готовый арендный бизнес</div>
+										<p>
+											Вариант помещения с бизнес-планом и продуманной инвестиционной стратегией под
+											ваши нужды. Поможем с выбором места и открытием.
+										</p>
+									</div>
+									<div class="blog-front__button">
+										<a href="#" class="btn btn-light">
+											<span>Перейти</span>
+											<img src="img/arrow1.svg" alt="">
+										</a>
+									</div>
+								</div>
 
-							</div><!-- col-3 -->
+							</div>
 
-							<div class="col-lg-3 blog__slide">
+							<div class="blog__slide swiper-slide">
 								<div class="blog__item">
 									<a href="#" class="blog__item-photo">
 										<img class="photo-full-size" src="images/blog/item-3.jpg" alt="Фото">
@@ -2071,10 +2160,26 @@
 									</div><!-- blog__item-body -->
 
 								</div><!-- blog__item -->
+								<div class="blog-front">
+									<div class="blog-front__badge">23 объекта</div>
+									<div class="blog-front__titles">
+										<div class="blog-front__title">Готовый арендный бизнес</div>
+										<p>
+											Вариант помещения с бизнес-планом и продуманной инвестиционной стратегией под
+											ваши нужды. Поможем с выбором места и открытием.
+										</p>
+									</div>
+									<div class="blog-front__button">
+										<a href="#" class="btn btn-light">
+											<span>Перейти</span>
+											<img src="img/arrow1.svg" alt="">
+										</a>
+									</div>
+								</div>
 
-							</div><!-- col-3 -->
+							</div>
 
-							<div class="col-lg-3 blog__slide">
+							<div class="blog__slide swiper-slide">
 								<div class="blog__item">
 									<a href="#" class="blog__item-photo">
 										<img class="photo-full-size" src="images/blog/item-4.jpg" alt="Фото">
@@ -2090,12 +2195,42 @@
 									</div><!-- blog__item-body -->
 
 								</div><!-- blog__item -->
+								<div class="blog-front">
+									<div class="blog-front__badge">23 объекта</div>
+									<div class="blog-front__titles">
+										<div class="blog-front__title">Готовый арендный бизнес</div>
+										<p>
+											Вариант помещения с бизнес-планом и продуманной инвестиционной стратегией под
+											ваши нужды. Поможем с выбором места и открытием.
+										</p>
+									</div>
+									<div class="blog-front__button">
+										<a href="#" class="btn btn-light">
+											<span>Перейти</span>
+											<img src="img/arrow1.svg" alt="">
+										</a>
+									</div>
+								</div>
 
-							</div><!-- col-3 -->
+							</div>
 
-						</div><!-- blog__list -->
+						</div>
 
 					</div><!-- blog__slider -->
+
+					<div class="block-top__right mob">
+						<a href="#" class="btn btn-light">
+							<span>Читайте в Telegram</span>
+							<svg class="svg-icon icon-telegram">
+								<use xlink:href="images/sprite.svg#icon-telegram"></use>
+							</svg>
+						</a>
+
+						<a href="#" class="btn btn-primary">
+							<span>Все публикации</span>
+						</a>
+
+					</div>
 
 				</div><!-- container -->
 

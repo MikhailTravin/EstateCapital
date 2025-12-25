@@ -273,7 +273,7 @@ h2 {
   height: 90px;
 }
 .nav__link:hover {
-  text-decoration: underline;
+  /*text-decoration: underline;*/
 }
 .nav__item:last-child {
   margin-right: 0;
@@ -526,6 +526,10 @@ h2 {
   overflow: hidden;
   border-radius: 18px;
   background: #ffffff;
+  transition: box-shadow 0.3s;
+  &:hover {
+    box-shadow: 0 35px 60px 0 rgba(8, 30, 22, 0.15);
+  }
 }
 .objects__item-header {
   position: relative;
@@ -771,7 +775,6 @@ h2 {
   overflow: hidden;
   height: 100%;
   position: relative;
-  min-height: 398px;
 }
 .blog__item-body {
   padding: 23px 18px 60px;
@@ -1353,10 +1356,9 @@ a.contacts__item-desc:hover {
   margin-bottom: 0;
 }
 .footer__descor {
-  margin: 54px 0 50px;
+  margin: 54px 0 54px;
   display: block;
-  height: 28px;
-  background: url("../images/footer-decor.svg") no-repeat center;
+  border: 1px solid #009dda;
 }
 .footer__bottom {
   align-items: flex-end;
@@ -1938,14 +1940,17 @@ a.contacts__item-desc:hover {
 
 /* search */
 .search {
-  position: absolute;
+  position: fixed;
   left: 0;
-  top: 94px;
-  z-index: 40;
+  top: 93px;
+  z-index: 80;
   background: #f8f8f9;
   padding-top: 40px;
   padding-bottom: 40px;
   width: 100%;
+  @media (max-width: 992px) {
+    display: none !important;
+  }
 }
 .search__form {
   position: relative;
@@ -2008,6 +2013,7 @@ a.contacts__item-desc:hover {
 }
 .page-wrap.loaded .nav__item:hover .drop {
   display: block;
+  pointer-events: auto;
 }
 .page-wrap.loaded .search.opened {
   display: block;
@@ -2075,12 +2081,12 @@ a.contacts__item-desc:hover {
 /* drop */
 .drop {
   position: absolute;
+  pointer-events: none;
   background: #f8f8f9;
   padding-top: 40px;
   padding-bottom: 40px;
   z-index: 20;
   top: 100%;
-  margin-top: 1px;
   left: 0;
   width: 100%;
 }
@@ -2112,8 +2118,11 @@ a.contacts__item-desc:hover {
 .drop__spacer-left {
   display: flex;
   justify-content: flex-end;
-  width: 443px;
+  width: 425px;
   margin-right: 20px;
+  @media (max-width: 1200px) {
+    width: 390px;
+  }
 }
 .drop__nav {
   padding-left: 0;
@@ -3185,13 +3194,6 @@ a.contacts__item-desc:hover {
   position: relative;
   overflow: hidden;
   border-radius: 14px;
-  &:hover,
-  &.active {
-    .blog-front {
-      opacity: 1;
-      pointer-events: auto;
-    }
-  }
 }
 .blog__wrapper {
   display: grid;
@@ -3228,5 +3230,18 @@ a.contacts__item-desc:hover {
     @media (max-width: 992px) {
       flex-direction: row-reverse;
     }
+  }
+}
+
+.select__input {
+  border-radius: 6px;
+  padding: 0px 16px 0px 20px;
+  height: 56px;
+  background: #f8f8f9;
+  font-weight: 500;
+  font-size: 16px;
+  margin: 0px 0px 16px 0px;
+  &::placeholder {
+    opacity: 0.4;
   }
 }

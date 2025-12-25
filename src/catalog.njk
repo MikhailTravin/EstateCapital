@@ -12,7 +12,7 @@
 
         <section class="page container">
             <div class="pager">
-                <a href="#">Главная</a>
+                <a href="home.html">Главная</a>
                 <i></i>
                 <span>Каталог объектов</span>
             </div><!-- pager -->
@@ -74,15 +74,9 @@
                                             </button>
                                         </div>
                                         <div class="filter__types">
-                                            <label class="filter__type">
-                                                <input type="radio" name="type1" value="Все" checked>
-                                                <span class="filter__type-btn">
-                                                    <span>Все</span>
-                                                </span>
-                                            </label>
 
                                             <label class="filter__type">
-                                                <input type="radio" name="type1" value="Округ">
+                                                <input type="radio" name="type1" value="Округ" checked>
                                                 <span class="filter__type-btn">
                                                     <span>Округ</span>
                                                 </span>
@@ -102,6 +96,8 @@
                                                 </span>
                                             </label>
                                         </div>
+                                        <input autocomplete="off" type="text" name="form[]"
+                                            placeholder="Введите округ, метро, или улицу" class="select__input">
                                         <div data-simplebar class="select__simplebar">
                                             <div class="select__items">
                                                 <span class="select__item">СЗАО</span>
@@ -148,6 +144,18 @@
                                         </div>
                                         <div data-simplebar class="select__simplebar">
                                             <div class="select__items">
+                                                <label class="checkbox">
+                                                    <input checked type="checkbox">
+                                                    <span class="checkbox__btn">
+                                                        <svg class="svg-icon icon-check">
+                                                            <use xlink:href="images/sprite.svg#icon-check"></use>
+                                                        </svg>
+                                                    </span>
+                                                    <span class="checkbox__desc">
+                                                        Все
+                                                    </span>
+
+                                                </label>
                                                 <label class="checkbox">
                                                     <input type="checkbox">
                                                     <span class="checkbox__btn">
@@ -385,8 +393,8 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="objects__item">
                             <div class="objects__item-header">
-                                <a href="#" class="objects__item-photo">
-                                    <img class="photo-full-size" src="images/objects/list/item-1.jpg"
+                                <a href="product-card1.html" class="objects__item-photo">
+                                    <img class="photo-full-size" src="images/objects/list/item-1.webp"
                                         alt="Большая Бронная, 25с3">
                                 </a>
 
@@ -399,7 +407,7 @@
                             </div><!-- objects__item-header -->
 
                             <div class="objects__item-body">
-                                <a href="#" class="objects__item-title">Большая Бронная, 25с3</a>
+                                <a href="product-card1.html" class="objects__item-title">Большая Бронная, 25с3</a>
 
                                 <div class="objects__item-params">
                                     <div class="objects__item-param">
@@ -443,8 +451,8 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="objects__item">
                             <div class="objects__item-header">
-                                <a href="#" class="objects__item-photo">
-                                    <img class="photo-full-size" src="images/objects/list/item-2.jpg"
+                                <a href="product-card1.html" class="objects__item-photo">
+                                    <img class="photo-full-size" src="images/objects/list/item-2.webp"
                                         alt="Малая Никитская, 8/1">
                                 </a>
 
@@ -459,7 +467,7 @@
                             </div><!-- objects__item-header -->
 
                             <div class="objects__item-body">
-                                <a href="#" class="objects__item-title">Малая Никитская, 8/1</a>
+                                <a href="product-card1.html" class="objects__item-title">Малая Никитская, 8/1</a>
 
                                 <div class="objects__item-params">
                                     <div class="objects__item-param">
@@ -503,8 +511,8 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="objects__item">
                             <div class="objects__item-header">
-                                <a href="#" class="objects__item-photo">
-                                    <img class="photo-full-size" src="images/objects/list/item-3.jpg"
+                                <a href="product-card1.html" class="objects__item-photo">
+                                    <img class="photo-full-size" src="images/objects/list/item-3.webp"
                                         alt="Звенигородское ш, 3Ас1">
                                 </a>
 
@@ -517,7 +525,7 @@
                             </div><!-- objects__item-header -->
 
                             <div class="objects__item-body">
-                                <a href="#" class="objects__item-title">Звенигородское ш, 3Ас1</a>
+                                <a href="product-card1.html" class="objects__item-title">Звенигородское ш, 3Ас1</a>
 
                                 <div class="objects__item-params">
                                     <div class="objects__item-param">
@@ -561,8 +569,8 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="objects__item">
                             <div class="objects__item-header">
-                                <a href="#" class="objects__item-photo">
-                                    <img class="photo-full-size" src="images/objects/list/item-4.jpg"
+                                <a href="product-card1.html" class="objects__item-photo">
+                                    <img class="photo-full-size" src="images/objects/list/item-4.webp"
                                         alt="Ленинградский пр-т, 62с26">
                                 </a>
 
@@ -575,7 +583,7 @@
                             </div><!-- objects__item-header -->
 
                             <div class="objects__item-body">
-                                <a href="#" class="objects__item-title">Ленинградский пр-т, 62с26</a>
+                                <a href="product-card1.html" class="objects__item-title">Ленинградский пр-т, 62с26</a>
 
                                 <div class="objects__item-params">
                                     <div class="objects__item-param">
@@ -619,8 +627,8 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="objects__item">
                             <div class="objects__item-header">
-                                <a href="#" class="objects__item-photo">
-                                    <img class="photo-full-size" src="images/objects/list/item-5.jpg"
+                                <a href="product-card1.html" class="objects__item-photo">
+                                    <img class="photo-full-size" src="images/objects/list/item-5.webp"
                                         alt="Новослободская, 20">
                                 </a>
 
@@ -635,7 +643,7 @@
                             </div><!-- objects__item-header -->
 
                             <div class="objects__item-body">
-                                <a href="#" class="objects__item-title">Новослободская, 20</a>
+                                <a href="product-card1.html" class="objects__item-title">Новослободская, 20</a>
 
                                 <div class="objects__item-params">
                                     <div class="objects__item-param">
@@ -679,8 +687,8 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="objects__item">
                             <div class="objects__item-header">
-                                <a href="#" class="objects__item-photo">
-                                    <img class="photo-full-size" src="images/objects/list/item-6.jpg"
+                                <a href="product-card1.html" class="objects__item-photo">
+                                    <img class="photo-full-size" src="images/objects/list/item-6.webp"
                                         alt="Большая Садовая, 6с2">
                                 </a>
 
@@ -693,7 +701,7 @@
                             </div><!-- objects__item-header -->
 
                             <div class="objects__item-body">
-                                <a href="#" class="objects__item-title">Большая Садовая, 6с2</a>
+                                <a href="product-card1.html" class="objects__item-title">Большая Садовая, 6с2</a>
 
                                 <div class="objects__item-params">
                                     <div class="objects__item-param">
@@ -737,8 +745,8 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="objects__item">
                             <div class="objects__item-header">
-                                <a href="#" class="objects__item-photo">
-                                    <img class="photo-full-size" src="images/objects/list/item-1.jpg"
+                                <a href="product-card1.html" class="objects__item-photo">
+                                    <img class="photo-full-size" src="images/objects/list/item-1.webp"
                                         alt="Большая Бронная, 25с3">
                                 </a>
 
@@ -751,7 +759,7 @@
                             </div><!-- objects__item-header -->
 
                             <div class="objects__item-body">
-                                <a href="#" class="objects__item-title">Большая Бронная, 25с3</a>
+                                <a href="product-card1.html" class="objects__item-title">Большая Бронная, 25с3</a>
 
                                 <div class="objects__item-params">
                                     <div class="objects__item-param">
@@ -795,8 +803,8 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="objects__item">
                             <div class="objects__item-header">
-                                <a href="#" class="objects__item-photo">
-                                    <img class="photo-full-size" src="images/objects/list/item-2.jpg"
+                                <a href="product-card1.html" class="objects__item-photo">
+                                    <img class="photo-full-size" src="images/objects/list/item-2.webp"
                                         alt="Малая Никитская, 8/1">
                                 </a>
 
@@ -811,7 +819,7 @@
                             </div><!-- objects__item-header -->
 
                             <div class="objects__item-body">
-                                <a href="#" class="objects__item-title">Малая Никитская, 8/1</a>
+                                <a href="product-card1.html" class="objects__item-title">Малая Никитская, 8/1</a>
 
                                 <div class="objects__item-params">
                                     <div class="objects__item-param">
@@ -855,8 +863,8 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="objects__item">
                             <div class="objects__item-header">
-                                <a href="#" class="objects__item-photo">
-                                    <img class="photo-full-size" src="images/objects/list/item-3.jpg"
+                                <a href="product-card1.html" class="objects__item-photo">
+                                    <img class="photo-full-size" src="images/objects/list/item-3.webp"
                                         alt="Звенигородское ш, 3Ас1">
                                 </a>
 
@@ -869,7 +877,7 @@
                             </div><!-- objects__item-header -->
 
                             <div class="objects__item-body">
-                                <a href="#" class="objects__item-title">Звенигородское ш, 3Ас1</a>
+                                <a href="product-card1.html" class="objects__item-title">Звенигородское ш, 3Ас1</a>
 
                                 <div class="objects__item-params">
                                     <div class="objects__item-param">
@@ -913,8 +921,8 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="objects__item">
                             <div class="objects__item-header">
-                                <a href="#" class="objects__item-photo">
-                                    <img class="photo-full-size" src="images/objects/list/item-4.jpg"
+                                <a href="product-card1.html" class="objects__item-photo">
+                                    <img class="photo-full-size" src="images/objects/list/item-4.webp"
                                         alt="Ленинградский пр-т, 62с26">
                                 </a>
 
@@ -927,7 +935,7 @@
                             </div><!-- objects__item-header -->
 
                             <div class="objects__item-body">
-                                <a href="#" class="objects__item-title">Ленинградский пр-т, 62с26</a>
+                                <a href="product-card1.html" class="objects__item-title">Ленинградский пр-т, 62с26</a>
 
                                 <div class="objects__item-params">
                                     <div class="objects__item-param">
@@ -971,8 +979,8 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="objects__item">
                             <div class="objects__item-header">
-                                <a href="#" class="objects__item-photo">
-                                    <img class="photo-full-size" src="images/objects/list/item-5.jpg"
+                                <a href="product-card1.html" class="objects__item-photo">
+                                    <img class="photo-full-size" src="images/objects/list/item-5.webp"
                                         alt="Новослободская, 20">
                                 </a>
 
@@ -987,7 +995,7 @@
                             </div><!-- objects__item-header -->
 
                             <div class="objects__item-body">
-                                <a href="#" class="objects__item-title">Новослободская, 20</a>
+                                <a href="product-card1.html" class="objects__item-title">Новослободская, 20</a>
 
                                 <div class="objects__item-params">
                                     <div class="objects__item-param">
@@ -1031,8 +1039,8 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="objects__item">
                             <div class="objects__item-header">
-                                <a href="#" class="objects__item-photo">
-                                    <img class="photo-full-size" src="images/objects/list/item-6.jpg"
+                                <a href="product-card1.html" class="objects__item-photo">
+                                    <img class="photo-full-size" src="images/objects/list/item-6.webp"
                                         alt="Большая Садовая, 6с2">
                                 </a>
 
@@ -1045,7 +1053,7 @@
                             </div><!-- objects__item-header -->
 
                             <div class="objects__item-body">
-                                <a href="#" class="objects__item-title">Большая Садовая, 6с2</a>
+                                <a href="product-card1.html" class="objects__item-title">Большая Садовая, 6с2</a>
 
                                 <div class="objects__item-params">
                                     <div class="objects__item-param">
@@ -1095,8 +1103,8 @@
                             </svg>
                         </a>
                         <div class="objects__item-header">
-                            <a href="#" class="objects__item-photo">
-                                <img class="photo-full-size" src="images/objects/list/item-1.jpg"
+                            <a href="product-card1.html" class="objects__item-photo">
+                                <img class="photo-full-size" src="images/objects/list/item-1.webp"
                                     alt="Большая Бронная, 25с3">
                             </a>
 
@@ -1106,7 +1114,7 @@
 
                         <div class="objects__item-body">
                             <div class="objects-list2__left">
-                                <a href="#" class="objects__item-title">Большая Бронная, 25с3</a>
+                                <a href="product-card1.html" class="objects__item-title">Большая Бронная, 25с3</a>
                                 <ul>
                                     <li>
                                         <div class="objects-list2__value">Пушкинская, Тверская, Чеховская</div>
@@ -1183,63 +1191,24 @@
 
         </section><!-- objects -->
 
-        <section class="subscribe container">
-            <form action=".php" class="subscribe__form subscribe__form_black">
-                <div class="row">
-                    <div class="subscribe__left col-lg-6">
-                        <p class="subscribe__title">Подпишитесь на наши обновления</p>
-                        <p class="subscribe__desc">Только важная информация, без спама</p>
-                    </div><!-- subscribe__left -->
+        <section class="app container app-dark2">
+            <div class="app__wrap">
+                <div class="app__text">
+                    <p class="app__title">
+                        Не нашли что искали?
+                    </p>
 
-                    <div class="subscribe__right col-lg-6">
-                        <div class="subscribe__fileds">
-                            <input type="text" name="name" class="subscribe__field" placeholder="Ваше имя">
-                            <input type="text" name="name" class="subscribe__field" placeholder="Ваш email">
-                            <button class="btn btn-light subscribe__btn">
-                                <span>Отправить</span>
-                                <svg class="svg-icon icon-subscribe-arrow">
-                                    <use xlink:href="images/sprite.svg#icon-subscribe-arrow"></use>
-                                </svg>
-                            </button>
+                    <p class="app__desc">
+                        Оставьте ваши контакты. Мы свяжемся с вами в ближайшее время.
+                    </p>
 
-                        </div><!-- subscribe__fileds -->
+                </div><!-- app__text -->
 
-                        <label class="checkbox">
-                            <input type="checkbox">
-                            <span class="checkbox__btn">
-                                <svg class="svg-icon icon-check">
-                                    <use xlink:href="images/sprite.svg#icon-check"></use>
-                                </svg>
-                            </span>
+                <a href="#" class="btn btn-light js-popup-link" data-href=".popup-make-appointment">Записаться</a>
 
-                            <span class="checkbox__desc">
-                                Я даю <a href="#">согласие</a> на обработку
-                                <a href="#">персональных данных</a>
-                            </span>
+            </div><!-- app__wrap -->
 
-                        </label>
-
-                        <label class="checkbox">
-                            <input type="checkbox">
-                            <span class="checkbox__btn">
-                                <svg class="svg-icon icon-check">
-                                    <use xlink:href="images/sprite.svg#icon-check"></use>
-                                </svg>
-                            </span>
-
-                            <span class="checkbox__desc">
-                                Я даю <a href="#">согласие</a> на рекламно-информационные рассылки
-                            </span>
-
-                        </label>
-
-                    </div><!-- subscribe__right -->
-
-                </div><!-- row -->
-
-            </form>
-
-        </section><!-- subscribe -->
+        </section><!-- app -->
 
         <section class="contacts container">
             <div class="contacts__wrap">
@@ -1410,15 +1379,9 @@
                                         </button>
                                     </div>
                                     <div class="filter__types">
-                                        <label class="filter__type">
-                                            <input type="radio" name="type2" value="Все" checked>
-                                            <span class="filter__type-btn">
-                                                <span>Все</span>
-                                            </span>
-                                        </label>
 
                                         <label class="filter__type">
-                                            <input type="radio" name="type2" value="Округ">
+                                            <input type="radio" name="type2" value="Округ" checked>
                                             <span class="filter__type-btn">
                                                 <span>Округ</span>
                                             </span>
@@ -1438,6 +1401,8 @@
                                             </span>
                                         </label>
                                     </div>
+                                    <input autocomplete="off" type="text" name="form[]"
+                                        placeholder="Введите округ, метро, или улицу" class="select__input">
                                     <div data-simplebar class="select__simplebar">
                                         <div class="select__items">
                                             <span class="select__item">СЗАО</span>
@@ -1481,6 +1446,18 @@
                                     </div>
                                     <div data-simplebar class="select__simplebar">
                                         <div class="select__items">
+                                            <label class="checkbox">
+                                                <input checked type="checkbox">
+                                                <span class="checkbox__btn">
+                                                    <svg class="svg-icon icon-check">
+                                                        <use xlink:href="images/sprite.svg#icon-check"></use>
+                                                    </svg>
+                                                </span>
+                                                <span class="checkbox__desc">
+                                                    Все
+                                                </span>
+
+                                            </label>
                                             <label class="checkbox">
                                                 <input type="checkbox">
                                                 <span class="checkbox__btn">

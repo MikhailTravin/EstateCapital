@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   new Swiper('.values__slider', {
     slidesPerView: 1,
-    spaceBetween: 0,
+    spaceBetween: 20,
     loop: true,
     autoplay: {
       delay: 3000
@@ -110,7 +110,8 @@ document.addEventListener('DOMContentLoaded', function () {
   new Swiper('.objects__slider', {
     slidesPerView: 'auto',
     loop: false,
-    spaceBetween: 20
+    spaceBetween: 20,
+
   });
 
   new Swiper('.blog__drop-slider', {
@@ -195,7 +196,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // RANGE SLIDERS
   function initRangeSliders() {
-    // Находим все контейнеры с классом range
     const rangeContainers = document.querySelectorAll('.range');
 
     rangeContainers.forEach(container => {
@@ -205,11 +205,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (!sliderElement || !minInput || !maxInput) return;
 
-      // Получаем значения из data-атрибутов или из инпутов
       const minValue = parseInt(sliderElement.getAttribute('data-min') || minInput.value);
       const maxValue = parseInt(sliderElement.getAttribute('data-max') || maxInput.value);
 
-      // Создаем слайдер
       const sliderInstance = noUiSlider.create(sliderElement, {
         start: [minInput.value, maxInput.value],
         connect: true,
@@ -219,7 +217,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
 
-      // Обновляем инпуты при движении слайдера
       sliderInstance.on('update', function (values, handle) {
         const value = Math.round(values[handle]);
         if (handle) {
@@ -229,7 +226,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
 
-      // Обновляем слайдер при изменении инпутов
       minInput.addEventListener('change', function () {
         const value = Math.max(minValue, Math.min(this.value, maxValue));
         this.value = value;
@@ -859,7 +855,7 @@ document.addEventListener('DOMContentLoaded', function () {
         {
           coords: [55.763690, 37.602005],
           data: {
-            icon: 'images/objects/list/item-1.jpg',
+            icon: 'images/objects/list/item-1.webp',
             address: 'Большая Бронная, 25с3',
             area: '46,5 м2',
             tenant: 'Арендатор: THE KAS',
@@ -909,6 +905,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var map3 = new ymaps.Map("map3", {
         center: [55.763690, 37.602005],
         zoom: 15,
+        controls: []
       });
 
       var customIconLayout = ymaps.templateLayoutFactory.createClass(
@@ -930,7 +927,7 @@ document.addEventListener('DOMContentLoaded', function () {
         {
           coords: [55.763690, 37.602005],
           data: {
-            icon: 'images/objects/list/item-1.jpg',
+            icon: 'images/objects/list/item-1.webp',
             address: 'Большая Бронная, 25с3',
             area: '46,5 м2',
             tenant: 'Арендатор: THE KAS',
@@ -996,6 +993,11 @@ if (document.querySelector('.images-product')) {
     spaceBetween: 20,
     speed: 400,
     preloadImages: true,
+    loop: true,
+    autoplay: {
+      delay: 3000
+    },
+    speed: 1000,
     pagination: {
       el: '.images-product__pagination',
       clickable: true,
@@ -1057,188 +1059,245 @@ if (btnMap) {
   });
 }
 
+function setupImageSwitching(container) {
+  const columns = container.querySelectorAll('.block-layout__column');
+  const allImages = container.querySelectorAll('.block-layout__image');
+  const allImage = container.querySelector('.block-layout__image[data-image="all"]');
+
+  let activeImage = null;
+
+  function hideAllImages() {
+    allImages.forEach(img => {
+      img.style.display = 'none';
+    });
+  }
+
+  function showImage(imageData) {
+    hideAllImages();
+    const targetImage = container.querySelector(`.block-layout__image[data-image="${imageData}"]`);
+    if (targetImage) {
+      targetImage.style.display = 'block';
+      activeImage = imageData;
+    }
+  }
+
+  function resetToAll() {
+    hideAllImages();
+    if (allImage) {
+      allImage.style.display = 'block';
+    }
+    activeImage = null;
+
+    columns.forEach(col => {
+      col.classList.remove('active');
+    });
+  }
+
+  resetToAll();
+
+  columns.forEach(column => {
+    column.addEventListener('click', function () {
+      const imageData = this.getAttribute('data-image');
+
+      if (activeImage === imageData) {
+        resetToAll();
+      } else {
+        showImage(imageData);
+
+        columns.forEach(col => {
+          col.classList.remove('active');
+        });
+        this.classList.add('active');
+      }
+    });
+  });
+}
+
+function setupZoomAndDrag(container) {
+  const zoomContainer = container.querySelector('.block-layout__zoom-container');
+  const images = container.querySelectorAll('.block-layout__image');
+  const zoomPlusBtn = container.querySelector('.zoom-plus');
+  const zoomMinusBtn = container.querySelector('.zoom-minus');
+
+  if (!zoomContainer || !zoomPlusBtn || !zoomMinusBtn) return;
+
+  // Настройки зума
+  let currentScale = 1;
+  const minScale = 0.5;
+  const maxScale = 3;
+  const scaleStep = 0.25;
+
+  let isDragging = false;
+  let startX, startY;
+  let translateX = 0;
+  let translateY = 0;
+
+  function getActiveImage() {
+    return container.querySelector('.block-layout__image[style*="display: block"], .block-layout__image[style*="display:block"]');
+  }
+
+  function getCenter() {
+    const containerRect = zoomContainer.getBoundingClientRect();
+    return {
+      x: containerRect.width / 2,
+      y: containerRect.height / 2
+    };
+  }
+
+  function centerImage() {
+    const activeImage = getActiveImage();
+    if (!activeImage) return;
+
+    translateX = 0;
+    translateY = 0;
+    updateTransform(activeImage);
+  }
+
+  function updateTransform(imageElement) {
+    if (!imageElement) return;
+
+    imageElement.style.transform = `
+            translate(${translateX}px, ${translateY}px)
+            scale(${currentScale})
+        `;
+
+    images.forEach(img => {
+      if (img !== imageElement) {
+        img.style.transform = `
+                    translate(${translateX}px, ${translateY}px)
+                    scale(${currentScale})
+                `;
+      }
+    });
+  }
+
+  function updateScale(newScale) {
+    const activeImage = getActiveImage();
+    if (!activeImage) return;
+
+    const oldScale = currentScale;
+    currentScale = Math.max(minScale, Math.min(maxScale, newScale));
+
+    if (currentScale === 1) {
+      centerImage();
+    } else if (currentScale !== oldScale && currentScale > 1) {
+      const scaleChange = currentScale / oldScale;
+      translateX *= scaleChange;
+      translateY *= scaleChange;
+    }
+
+    constrainPosition(activeImage);
+    updateTransform(activeImage);
+
+    zoomPlusBtn.disabled = currentScale >= maxScale;
+    zoomMinusBtn.disabled = currentScale <= minScale;
+
+    zoomContainer.style.cursor = currentScale > 1 ? 'grab' : 'default';
+  }
+
+  function constrainPosition(imageElement) {
+    if (currentScale <= 1) {
+      translateX = 0;
+      translateY = 0;
+      return;
+    }
+
+    const containerRect = zoomContainer.getBoundingClientRect();
+    const imageRect = imageElement.getBoundingClientRect();
+
+    const scaledWidth = imageRect.width * currentScale;
+    const scaledHeight = imageRect.height * currentScale;
+
+    const maxMoveX = (scaledWidth - containerRect.width) / 2;
+    const maxMoveY = (scaledHeight - containerRect.height) / 2;
+
+    translateX = Math.max(-maxMoveX, Math.min(maxMoveX, translateX));
+    translateY = Math.max(-maxMoveY, Math.min(maxMoveY, translateY));
+
+    if (scaledWidth <= containerRect.width) {
+      translateX = 0;
+    }
+    if (scaledHeight <= containerRect.height) {
+      translateY = 0;
+    }
+  }
+
+  function startDrag(e) {
+    if (currentScale <= 1) return;
+
+    e.preventDefault();
+    const activeImage = getActiveImage();
+    if (!activeImage) return;
+
+    isDragging = true;
+    startX = e.clientX - translateX;
+    startY = e.clientY - translateY;
+    zoomContainer.style.cursor = 'grabbing';
+
+    document.addEventListener('mousemove', drag);
+    document.addEventListener('mouseup', stopDrag);
+  }
+
+  function drag(e) {
+    if (!isDragging) return;
+
+    translateX = e.clientX - startX;
+    translateY = e.clientY - startY;
+
+    const activeImage = getActiveImage();
+    if (activeImage) {
+      constrainPosition(activeImage);
+      updateTransform(activeImage);
+    }
+  }
+
+  function stopDrag() {
+    isDragging = false;
+    zoomContainer.style.cursor = currentScale > 1 ? 'grab' : 'default';
+
+    document.removeEventListener('mousemove', drag);
+    document.removeEventListener('mouseup', stopDrag);
+  }
+
+  zoomPlusBtn.addEventListener('click', function () {
+    if (currentScale < maxScale) {
+      updateScale(currentScale + scaleStep);
+    }
+  });
+
+  zoomMinusBtn.addEventListener('click', function () {
+    if (currentScale > minScale) {
+      updateScale(currentScale - scaleStep);
+    }
+  });
+
+  zoomContainer.addEventListener('dblclick', function (e) {
+    e.preventDefault();
+    updateScale(1);
+  });
+
+  centerImage();
+  updateScale(1);
+
+  window.addEventListener('resize', function () {
+    const activeImage = getActiveImage();
+    if (activeImage) {
+      centerImage();
+      constrainPosition(activeImage);
+      updateTransform(activeImage);
+    }
+  });
+
+  zoomContainer.addEventListener('mousedown', startDrag);
+}
+
 const layoutContainers = document.querySelectorAll('.block-layout__content');
 
 if (layoutContainers) {
   layoutContainers.forEach(container => {
-    const zoomContainer = container.querySelector('.block-layout__zoom-container');
-    const image = container.querySelector('.block-layout__image');
-    const zoomPlusBtn = container.querySelector('.zoom-plus');
-    const zoomMinusBtn = container.querySelector('.zoom-minus');
+    setupImageSwitching(container);
 
-    // Настройки зума
-    let currentScale = 1;
-    const minScale = 0.5;
-    const maxScale = 3;
-    const scaleStep = 0.25;
-
-    let isDragging = false;
-    let startX, startY;
-    let translateX = 0;
-    let translateY = 0;
-
-    function getCenter() {
-      const containerRect = zoomContainer.getBoundingClientRect();
-      return {
-        x: containerRect.width / 2,
-        y: containerRect.height / 2
-      };
-    }
-
-    function centerImage() {
-      const imageRect = image.getBoundingClientRect();
-      const center = getCenter();
-
-      translateX = 0;
-      translateY = 0;
-      updateTransform();
-    }
-
-    function updateTransform() {
-      image.style.transform = `
-                translate(${translateX}px, ${translateY}px)
-                scale(${currentScale})
-            `;
-    }
-
-    function updateScale(newScale) {
-      const oldScale = currentScale;
-      currentScale = Math.max(minScale, Math.min(maxScale, newScale));
-
-      if (currentScale === 1) {
-        centerImage();
-      } else if (currentScale !== oldScale && currentScale > 1) {
-        const scaleChange = currentScale / oldScale;
-        translateX *= scaleChange;
-        translateY *= scaleChange;
-      }
-
-      constrainPosition();
-      updateTransform();
-
-      zoomPlusBtn.disabled = currentScale >= maxScale;
-      zoomMinusBtn.disabled = currentScale <= minScale;
-
-      zoomContainer.style.cursor = currentScale > 1 ? 'grab' : 'default';
-    }
-
-    function constrainPosition() {
-      if (currentScale <= 1) {
-        translateX = 0;
-        translateY = 0;
-        return;
-      }
-
-      const containerRect = zoomContainer.getBoundingClientRect();
-      const imageRect = image.getBoundingClientRect();
-
-      const scaledWidth = imageRect.width * currentScale;
-      const scaledHeight = imageRect.height * currentScale;
-
-      const maxMoveX = (scaledWidth - containerRect.width) / 2;
-      const maxMoveY = (scaledHeight - containerRect.height) / 2;
-
-      translateX = Math.max(-maxMoveX, Math.min(maxMoveX, translateX));
-      translateY = Math.max(-maxMoveY, Math.min(maxMoveY, translateY));
-
-      if (scaledWidth <= containerRect.width) {
-        translateX = 0;
-      }
-      if (scaledHeight <= containerRect.height) {
-        translateY = 0;
-      }
-    }
-
-    zoomContainer.addEventListener('mousedown', startDrag);
-
-    function startDrag(e) {
-      if (currentScale <= 1) return;
-
-      e.preventDefault();
-      isDragging = true;
-      startX = e.clientX - translateX;
-      startY = e.clientY - translateY;
-      zoomContainer.style.cursor = 'grabbing';
-
-      document.addEventListener('mousemove', drag);
-      document.addEventListener('mouseup', stopDrag);
-    }
-
-    function drag(e) {
-      if (!isDragging) return;
-
-      translateX = e.clientX - startX;
-      translateY = e.clientY - startY;
-
-      constrainPosition();
-      updateTransform();
-    }
-
-    function stopDrag() {
-      isDragging = false;
-      zoomContainer.style.cursor = currentScale > 1 ? 'grab' : 'default';
-
-      document.removeEventListener('mousemove', drag);
-      document.removeEventListener('mouseup', stopDrag);
-    }
-
-    zoomPlusBtn.addEventListener('click', function () {
-      if (currentScale < maxScale) {
-        updateScale(currentScale + scaleStep);
-      }
-    });
-
-    zoomMinusBtn.addEventListener('click', function () {
-      if (currentScale > minScale) {
-        updateScale(currentScale - scaleStep);
-      }
-    });
-
-    zoomContainer.addEventListener('wheel', function (e) {
-      e.preventDefault();
-
-      if (currentScale <= minScale && e.deltaY > 0) return;
-      if (currentScale >= maxScale && e.deltaY < 0) return;
-
-      const rect = zoomContainer.getBoundingClientRect();
-      const mouseX = e.clientX - rect.left;
-      const mouseY = e.clientY - rect.top;
-      const center = getCenter();
-
-      const offsetFromCenterX = mouseX - center.x;
-      const offsetFromCenterY = mouseY - center.y;
-
-      const oldScale = currentScale;
-
-      if (e.deltaY < 0) {
-        updateScale(currentScale + scaleStep);
-      } else {
-        updateScale(currentScale - scaleStep);
-      }
-
-      if (currentScale !== oldScale && currentScale > 1) {
-        const scaleChange = currentScale / oldScale;
-        translateX += offsetFromCenterX * (1 - scaleChange);
-        translateY += offsetFromCenterY * (1 - scaleChange);
-
-        constrainPosition();
-        updateTransform();
-      }
-    }, { passive: false });
-
-    zoomContainer.addEventListener('dblclick', function (e) {
-      e.preventDefault();
-      updateScale(1);
-    });
-
-    centerImage();
-    updateScale(1);
-
-    window.addEventListener('resize', function () {
-      centerImage();
-      constrainPosition();
-      updateTransform();
-    });
+    setupZoomAndDrag(container);
   });
 }
 

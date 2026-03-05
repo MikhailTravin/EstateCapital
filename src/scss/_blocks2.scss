@@ -1727,11 +1727,12 @@
     }
 
     &__body {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
+        display: flex;
+        flex-wrap: wrap;
         gap: 20px;
+
         @media (max-width: 992px) {
-            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
         }
         @media (max-width: 768px) {
             gap: 14px;
@@ -1750,12 +1751,44 @@
         gap: 30px;
         overflow: hidden;
 
+        @media (min-width: 993px) {
+            $gap: 20px;
+
+            &.column1 {
+                flex: 1 0 calc((100% - 11 * #{$gap}) / 12 * 2 + #{$gap});
+            }
+
+            &.column2,
+            &.column3,
+            &.column6,
+            &.column7 {
+                flex: 1 0 calc((100% - 11 * #{$gap}) / 12 * 5 + 4 * #{$gap});
+            }
+
+            &.column4,
+            &.column5 {
+                flex: 1 0 calc((100% - 11 * #{$gap}) / 12 * 6 + 5 * #{$gap});
+            }
+
+            &.column8 {
+                flex: 1 0 calc((100% - 11 * #{$gap}) / 12 * 2 + #{$gap});
+            }
+
+            &.column6 {
+                padding: 22px 240px 22px 22px;
+            }
+        }
         &.column_dark {
             color: #fff;
             background: #334961;
             .block-benefits2__title1 {
                 opacity: 0.4;
             }
+        }
+
+        &.column_blue {
+            color: #fff;
+            background: #009dda;
         }
 
         .btn {
@@ -1787,36 +1820,50 @@
             }
         }
 
-        &.column_blue {
-            color: #fff;
-            background: #009dda;
-        }
-        &.column7 {
-            @media (max-width: 992px) {
+        @media (max-width: 992px) {
+            $gap: 20px;
+
+            &.column1,
+            &.column2,
+            &.column3,
+            &.column4,
+            &.column5,
+            &.column6,
+            &.column7,
+            &.column8 {
+                flex: 0 0 calc(50% - #{$gap} / 2);
+            }
+
+            &.column7 {
                 .block-benefits2__title2 {
                     display: none;
-                }
-            }
-        }
-        &.column8 {
-            @media (max-width: 768px) {
-                .block-benefits2__title2 {
-                    font-size: 28px;
                 }
             }
         }
 
         @media (max-width: 768px) {
             min-height: 193px;
-            padding: 20px 20px 20px 20px;
+            padding: 20px;
             gap: 10px;
+
+            &.column1,
+            &.column2,
+            &.column3,
+            &.column4,
+            &.column5,
+            &.column6,
+            &.column7,
+            &.column8 {
+                flex: 0 0 100%;
+            }
+
             &.column2 {
                 img {
                     display: none;
                 }
             }
+
             &.column3 {
-                grid-column: -1/1;
                 justify-content: start;
                 gap: 6px;
                 .block-benefits2__top {
@@ -1828,8 +1875,8 @@
                     height: 100%;
                 }
             }
+
             &.column4 {
-                grid-column: -1/1;
                 justify-content: start;
                 padding: 20px 20px 100px 20px;
                 .block-benefits2__top {
@@ -1841,8 +1888,8 @@
                     height: 100%;
                 }
             }
+
             &.column5 {
-                grid-column: -1/1;
                 justify-content: start;
                 padding: 20px 20px 90px 20px;
                 .block-benefits2__top {
@@ -1859,8 +1906,8 @@
                     height: 100%;
                 }
             }
+
             &.column6 {
-                grid-column: -1/1;
                 padding: 20px 230px 20px 20px;
                 .block-benefits2__top {
                     align-items: start;
@@ -1868,51 +1915,20 @@
                     padding: 5px 0px 0px 0px;
                 }
             }
-        }
-
-        @media (min-width: 993px) {
-            &.column1 {
-                grid-column: span 2; // 16% ≈ 2/12
-            }
-
-            &.column2 {
-                grid-column: span 5; // 40.5% ≈ 5/12
-            }
-
-            &.column3 {
-                grid-column: span 5; // 40.5% ≈ 5/12
-            }
-
-            &.column4 {
-                grid-column: span 6; // 50% = 6/12
-            }
-
-            &.column5 {
-                grid-column: span 6; // 50% = 6/12
-            }
-
-            &.column6 {
-                grid-column: span 5; // 40.5% ≈ 5/12
-                padding: 22px 240px 22px 22px;
-            }
-
-            &.column7 {
-                grid-column: span 5; // 40.5% ≈ 5/12
-            }
 
             &.column8 {
-                grid-column: span 2; // 16% ≈ 2/12
+                .block-benefits2__title2 {
+                    font-size: 28px;
+                }
             }
         }
 
-        &.column6 {
-            @media (max-width: 600px) {
+        @media (max-width: 600px) {
+            &.column6 {
                 padding: 20px 150px 20px 20px;
             }
         }
     }
-
-    // .block-benefits2__top
 
     &__top {
         position: relative;
@@ -1923,17 +1939,17 @@
         align-items: center;
         justify-content: space-between;
         gap: 10px 20px;
+
         img {
             width: 46px;
             height: 46px;
             flex: 0 0 46px;
         }
+
         @media (max-width: 768px) {
             position: static;
         }
     }
-
-    // .block-benefits2__title1
 
     &__title1 {
         font-weight: 600;
@@ -1945,8 +1961,6 @@
         }
     }
 
-    // .block-benefits2__bottom
-
     &__bottom {
         position: relative;
         z-index: 10;
@@ -1954,19 +1968,18 @@
         align-items: flex-end;
         gap: 20px;
         justify-content: space-between;
+
         p {
             font-weight: 500;
             font-size: 14px;
             line-height: 157%;
         }
+
         @media (max-width: 768px) {
             flex-direction: column;
-
             align-items: start;
         }
     }
-
-    // .block-benefits2__title2
 
     &__title2 {
         font-weight: 600;
@@ -1977,8 +1990,6 @@
             letter-spacing: -0.01em;
         }
     }
-
-    // .block-benefits2__bg1
 
     &__bg1 {
         position: absolute;
